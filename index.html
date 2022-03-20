@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="A startpage designed to fit my aesthetic and be friendly for evening use." />
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Seakeal</title>
+    <script type="text/javascript" src="src/clock.js"></script>
+    <script type="text/javascript" src="src/background.js"></script>
+</head>
+<body>
+    <div id="bgContainer" class="bgContainer">
+        <canvas id="bgCanvas">
+            error: your browser does not support the canvas element
+        </canvas>
+    </div>
+    <div id="mainContainer" class="mainContainer">
+        <div class="time" id="time">
+            error: clock function broken
+        </div>
+        <div class="content" id="leftBar" style="width:89px; height:299px; background-image: url('img/skull_left2.png');"></div>
+        <div class="content" id="mainBar">
+            <div class="welcomeMsg" id="welcomeMsg">
+                <p>Welcome Seakeal</p>
+            </div>
+            <div class="bookmarks" id="bookmarks">
+                <ul class="bookmarksList" id="bm1" >
+                    <li><a href="https://docs.google.com/spreadsheets/d/1mAi9YMDP4WrxkzyRPWIpwKTuCn0NSU2mP4ANmoSRfzE/" class="clink" target="_blank">Finances</a></li>
+                    <li><a href="https://mail.google.com/mail/u/0" class="clink" target="_blank">Pro Email</a></li>
+                    <li><a href="https://mail.google.com/mail/u/1" class="clink" target="_blank">Fun Email</a></li>
+                    <li><a href="" class="clink" target="_blank"></a></li>
+                </ul>
+                <ul class="bookmarksList" id="bm2" name="code">
+                    <li><a href="https://github.com/seakeal" class="clink" target="_blank">GitHub</a></li>
+                    <li><a href="https://leetcode.com/" class="clink" target="_blank">LeetCode</a></li>
+                </ul>
+                <ul class="bookmarksList" id="bm3" name="entertainment">
+                    <li><a href="https://open.spotify.com/" class="clink" target="_blank">Spotify</a></li>
+                    <li><a href="https://www.youtube.com/feed/subscriptions" class="clink" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content" id="rightBar" style="width:89px; height:299px; background-image: url('img/skull_right2.png');"></div>
+    </div>
+</body>
+</html>
