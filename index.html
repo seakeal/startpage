@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8" />
-    <meta name="description" content="A startpage designed to fit my aesthetic and be friendly for evening use." />
+    <meta name="description" content="A startpage designed to fit my aesthetic and be friendly for evening use. This version is for my work computer." />
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Seakeal</title>
+    <link rel="icon" type="image/x-icon" href="img/tmpenguin.ico" />
+    <title>Start Page</title>
     <script type="text/javascript" src="src/clock.js"></script>
     <script type="text/javascript" src="src/background.js"></script>
 </head>
@@ -19,29 +20,31 @@
         <div class="time" id="time">
             error: clock function broken
         </div>
-        <div class="content" id="leftBar" style="width:89px; height:299px; background-image: url('img/skull_left2.png');"></div>
+        <div class="content" id="leftBar" style="width:89px; height:299px;"><img class="penguin" id="left-penguin" src="img/Penguin.svg" alt="penguin not found"></div>
         <div class="content" id="mainBar">
             <div class="welcomeMsg" id="welcomeMsg">
-                <p>Welcome Seakeal</p>
+                <p>Welcome Nic</p>
             </div>
             <div class="bookmarks" id="bookmarks">
                 <ul class="bookmarksList" id="bm1" >
-                    <li><a href="https://docs.google.com/spreadsheets/d/1mAi9YMDP4WrxkzyRPWIpwKTuCn0NSU2mP4ANmoSRfzE/" class="clink" target="_blank">Finances</a></li>
-                    <li><a href="https://mail.google.com/mail/u/0" class="clink" target="_blank">Pro Email</a></li>
-                    <li><a href="https://mail.google.com/mail/u/1" class="clink" target="_blank">Fun Email</a></li>
+                    <li><a href="https://outlook.office365.com/mail/" class="clink" target="_blank">Email</a></li>
+                    <li><a href="https://bit.ly/3JvRL9k" class="clink" target="_blank">Org Chart</a></li>
+                    <li><a href="https://trello.com/b/vAOYtd03/open-market-rollout-timeline" class="clink" target="_blank">Trello</a></li>
                     <li><a href="" class="clink" target="_blank"></a></li>
                 </ul>
                 <ul class="bookmarksList" id="bm2" name="code">
                     <li><a href="https://github.com/seakeal" class="clink" target="_blank">GitHub</a></li>
-                    <li><a href="https://leetcode.com/" class="clink" target="_blank">LeetCode</a></li>
+                    <li><a href="http://35.170.194.18/" class="clink" target="_blank">Open Market</a></li>
+                    <li><a href="https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Instances:" class="clink" target="_blank">EC2 Manager</a></li>                    
                 </ul>
                 <ul class="bookmarksList" id="bm3" name="entertainment">
                     <li><a href="https://open.spotify.com/" class="clink" target="_blank">Spotify</a></li>
+                    <li><a href="https://leetcode.com/" class="clink" target="_blank">LeetCode</a></li>
                     <li><a href="https://www.youtube.com/feed/subscriptions" class="clink" target="_blank">YouTube</a></li>
                 </ul>
             </div>
         </div>
-        <div class="content" id="rightBar" style="width:89px; height:299px; background-image: url('img/skull_right2.png');"></div>
+        <div class="content" id="rightBar" style="width:89px; height:299px;"><img class="penguin" id="right-penguin" src="img/Penguin.svg" alt="penguin not found"></div>
     </div>
 </body>
 </html>

@@ -9,14 +9,20 @@
 }
 
 * {
-    color: #ddd;
-    font-family: TulpenOne;
-    font-size: 30px;
+    color: #eee;
+    font-family: JosefinSans;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 html, body {
     margin: 0;
     padding: 0;
+}
+
+.penguin {
+    height: 89px;
+    margin-top: 70px;
 }
 
 .bgContainer{
@@ -37,8 +43,8 @@ html, body {
 }
 
 .time {
-    padding-left: 10px;
-    font-size: 36px;
+    padding-left: 80px;
+    font-size: 32px;
 }
 
 .content {
@@ -76,14 +82,15 @@ ul {
 }
 
 li {
-    margin-bottom: 3px;
+    margin-bottom: 10px;
 }
 
 a {
     text-decoration:none;
-    padding: 1px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 3px;
+    padding-top: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
     /*font-size:16px;
     height:12px;
     line-height:12px;
@@ -91,5 +98,6 @@ a {
 }
 
 a:hover {
-    background-color: #080808;
+    border-radius: 30px;
+    background-color: rgba(139, 139, 139, 0.2);
 }

@@ -1,3 +1,6 @@
+var bgColor1 = '#263048'
+var bgColor2 = '#4d6191'
+
 document.addEventListener('DOMContentLoaded', function(event) {
     console.log('Background animation loaded');
     var canvas = document.getElementById('bgCanvas');
@@ -6,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         return;
     }
     // Fun colors '#e67e00' '#9c4900' #7a2c02
-    animateBackground(0.0,1.0,'#2b2b2b','#1a1a1a',2);
+    animateBackground(0.0,1.0,bgColor1,bgColor2);
 });
 
 function animateBackground(x,y,c1,c2) {
