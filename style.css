@@ -1,6 +1,6 @@
 /* 
- *  IU Crimson: #990000
- *  IU Cream: #EEEDEB
+ *  IU Crimson:     #990000
+ *  IU Cream:       #EEEDEB
  */
 
 @font-face {
@@ -23,15 +23,17 @@
 body {
     height: 100vh;
     background-color: rgba(99,00,00);
+    overflow: hidden;
     /* background: url("img/iu.png") repeat;
     background-position: 0px 0px;
     animation: bg-penguins 3s linear infinite; */
 }
 
+/* 
 @keyframes bg-penguins {
     0% { background-position: 0px 0px; }
     100% { background-position: 180px 180px; }
-}
+} */
 
 /* .penguin {
     height: 150px;
@@ -63,14 +65,14 @@ body {
     position: fixed;
     left: 50%;
     top: 50%;
-    margin-left: -315px;
-    margin-top: -200px;
-    padding-top: 35px;
+    margin-left: -304px;
+    margin-top: -183px;
+    /*padding-top: 35px;
     padding-right: 0px;
     padding-left: 15px;
-    padding-bottom: -10px;
+    padding-bottom: -10px; */
     background-color: rgba(153,00,00,0.6); 
-    border: 2mm groove rgba(238, 237, 235, 1);
+    border: 6px groove rgba(238, 237, 235, 1);
     /* border-radius: 5px; */
     /* background-color: rgba(38,48,72,0.8); */
     /* animation: mc-background 6s linear infinite; */
@@ -81,11 +83,11 @@ body {
 
 
 .time {
-    position: relative;
-    left: 50%;
-    margin-left: -230px;
+    text-align: center;
     font-size: 32px;
     font-weight: bold;
+    padding: 0px;
+    padding-top: 20px;
 }
 
 .content {
@@ -108,7 +110,7 @@ body {
 }
 
 .bookmarksList {
-    width: 32%;
+    width: 33%;
     float: left;
     padding: 0px;
 }
