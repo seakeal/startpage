@@ -1,5 +1,5 @@
 # Nic's Startpage
 This is a version of my startpage with links for work at IU.
 
-This is an example page.
+This is what my page looks like.
 ![Image not found](img/example.png)
