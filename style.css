@@ -81,6 +81,22 @@ body {
     z-index: 1;
 }
 
+.rssContainer {
+    position:fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: 304px;
+    margin-top: -183px;
+    padding-left: 10px;
+    width: 250px;
+    height: 350px;
+    background-color: rgba(131, 2, 2, 0.6); 
+    border: 6px ridge rgba(238, 237, 235, 1);
+    border-left: 0;
+    overflow-y: scroll;
+    z-index: 0;
+}
+
 
 .time {
     text-align: center;
@@ -129,7 +145,7 @@ li {
     margin-bottom: 10px;
 }
 
-a {
+.bookmarks a {
     text-decoration:none;
     padding: 3px;
     padding-top: 6px;
