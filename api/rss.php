@@ -2,7 +2,8 @@
 
 // Constants
 //$dateFormat = 'D, d M Y';
-$dateFormat = 'M d, Y';
+//$dateFormat = 'M d, Y';
+$dateFormat = 'Y,m,d,h,i,s';
 
 function getRss($feed) : string {
     $ch = curl_init($feed);
@@ -39,7 +40,7 @@ function rssStarsector($rss) {
 
     for($i = 0; $i < 3; $i++) {
         $article = $rss->channel->item[$i];
-        $pubDate = DateTimeImmutable::createFromFormat('D, d M Y', substr($article->pubDate, 0, $dateLength))->format($dateFormat);
+        $pubDate = DateTimeImmutable::createFromFormat('D, d M Y H:i:s', substr($article->pubDate,0,25))->format($dateFormat);
         $htmlString  = '<div class="rss-starsector" id="starsector'.$i.'">';
         $htmlString .= '<b><p>'.htmlLink($article->link,$article->title).'</p></b>';
         $htmlString .= '<p>'.substr($article->description,0,-10).'&#8230;</p>';
@@ -72,7 +73,7 @@ function rssYouTube($rss) {
 
     for($i = 0; $i < 3; $i++) {
         $entry  = $rss->entry[$i];
-        $pubDate = DateTimeImmutable::createFromFormat('Y-m-d',substr($entry->published,0,10))->format($dateFormat);
+        $pubDate = DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s',substr($entry->published,0,19))->format($dateFormat);
         $htmlString  = '<div class="rss-youtube" id="'.$author->name.$i.'">';
         $htmlString .= '<b><p>'.htmllink($entry->link["href"],$entry->title).'</p></b>';
         // $htmlString .= '<p>'.$entry->media["description"].'</p>';

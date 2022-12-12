@@ -7,5 +7,14 @@ function updateRSS() {
     document.getElementById('rssContainer').innerHTML='<p>Loading RSS feeds...</p>';
     fetch('api/rss.php')
     .then((response) => response.json())
-    .then((feed) => console.log(feed));
+    .then((feed) => {
+        console.log(feed);
+        var feedList = [];
+        document.getElementById('rssContainer').innerHTML='<p>RSS feeds loaded</p>';
+        feed.forEach(element => {
+            let source  = element.source;
+            let title   = element.title;
+            let link    = element.link;
+        });
+    })
 }
