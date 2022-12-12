@@ -36,7 +36,7 @@ function rssStarsector($rss) {
     global $dateFormat;
     $dateLength = 16;
 
-    $feed = array("source"=>"Starsector", "title"=>"Starsector", "link"=>"https://fractalsoftworks.com/", "feed"=>array());
+    $feed = array();
 
     for($i = 0; $i < 3; $i++) {
         $article = $rss->channel->item[$i];
@@ -45,7 +45,7 @@ function rssStarsector($rss) {
         $htmlString .= '<b><p>'.htmlLink($article->link,$article->title).'</p></b>';
         $htmlString .= '<p>'.substr($article->description,0,-10).'&#8230;</p>';
         $htmlString .= '</div>';
-        array_push($feed["feed"], array("date"=>$pubDate, "html"=>$htmlString));
+        array_push($feed, array("source"=>"Starsector", "title"=>"Starsector", "link"=>"https://fractalsoftworks.com/", "date"=>$pubDate, "html"=>$htmlString));
     }
 
     return $feed;
@@ -69,7 +69,7 @@ function rssYouTube($rss) {
     $author = $rss->author;
 
     // Cast as string or becomes SimpleXML object
-    $feed = array("source"=>"YouTube", "title"=>(string)$author->name, "link"=>(string)$author->uri, "feed"=>array());
+    $feed = array();
 
     for($i = 0; $i < 3; $i++) {
         $entry  = $rss->entry[$i];
@@ -78,7 +78,7 @@ function rssYouTube($rss) {
         $htmlString .= '<b><p>'.htmllink($entry->link["href"],$entry->title).'</p></b>';
         // $htmlString .= '<p>'.$entry->media["description"].'</p>';
         $htmlString .= "</div>";
-        array_push($feed["feed"], array("date"=>$pubDate, "html"=>$htmlString));
+        array_push($feed, array("source"=>"YouTube", "title"=>(string)$author->name, "link"=>(string)$author->uri, "date"=>$pubDate, "html"=>$htmlString));
     }
 
     return $feed;
@@ -95,19 +95,18 @@ function rss() {
         $rss = new SimpleXMLElement(getRss($url));
         switch ($from) {
             case "Starsector":
-                array_push($feed, rssStarsector($rss));
+                $feed = array_merge($feed, rssStarsector($rss));
                 break;
             // YouTube channels
             case "Lofi Girl":
             case "Spyfall":
-                array_push($feed, rssYouTube($rss));
+                $feed = array_merge($feed, rssYouTube($rss));
                 break;
-            default:
-                $feed[$from] = array("date"=>new DateTimeImmutable('1/1/1900'), "htmlString"=>"Create a case for ".$feed);
+            default:    // TODO: Mess with this
+                //$feed[$from] = array("date"=>new DateTimeImmutable('1/1/1900'), "htmlString"=>"Create a case for ".$feed);
         }
     }
     
-    //var_dump($feed);
     echo json_encode($feed);
 }
 
