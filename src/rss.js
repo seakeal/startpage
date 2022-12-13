@@ -41,6 +41,7 @@ function updateRSS() {
     })
     .then(() => {
         document.getElementById('rssButton').style.marginLeft='316px';
+        document.getElementById('rssButton').style.marginTop='-160px';
         document.getElementById('rssButton').innerHTML=rssSVG;
     });
 }
@@ -48,17 +49,33 @@ function updateRSS() {
 function toggleRss() {
     if (document.getElementById('rssContainer').style.visibility == 'hidden') {
         document.getElementById('rssContainer').style.visibility='visible';
+        let icons = document.getElementsByClassName('iconButtons');
+        for (let i = 0; i < icons.length; i++) {
+            icons[i].style.visiblity = "hidden";
+        }
+        // document.getElementsByClassName('iconButtons').forEach(icon => {
+        //     icon.style.visibility='hidden';
+        // });
         document.getElementById('rssButton').style=rssClose;
         document.getElementById('rssButton').innerHTML='X';
     } else {
         document.getElementById('rssContainer').style.visibility='hidden';
-        document.getElementById('rssButton').style='margin-left:316px';
+        let icons = document.getElementsByClassName('iconButtons');
+        for (let i = 0; i < icons.length; i++) {
+            icons[i].style.visiblity = "visible";
+         }
+        // document.getElementsByClassName('iconButtons').forEach(icon => {
+        //     icon.style.visibility='visible';
+        // });
+        document.getElementById('rssButton').style='margin-left:316px; margin-top: -160px;';
         document.getElementById('rssButton').innerHTML=rssSVG;
     }
 }
 
 var rssClose = `
-    margin-left:584px;
+    visibility: visible;
+    margin-top: -160px;
+    margin-left: 584px;
     width: 26px;
     height: 26px;
     font-size: 20px;

@@ -72,7 +72,7 @@ function rssStarsector($rss) : array {
 }
 
 function rssYouTube($rss) : array {
-    // **** Code to find YouTube creator ID ****
+    // **** Code to find YouTube creator ID (thx Stack Overflow)****
     // **** Inspect YT channel page and paste into JS console ****
     // for (var arrScripts = document.getElementsByTagName('script'), i = 0; i < arrScripts.length; i++) {
     //     if (arrScripts[i].textContent.indexOf('externalId') != -1) {
@@ -92,6 +92,7 @@ function rssYouTube($rss) : array {
     // Cast as string or becomes SimpleXML object
     $feed = array();
 
+    // TODO: Fuck with HTML string
     for($i = 0; $i < 3; $i++) {
         $entry  = $rss->entry[$i];
         $pubDate = DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s',substr($entry->published,0,19))->format($dateFormat);
@@ -109,26 +110,31 @@ function rssYouTube($rss) : array {
 // ## Main Function
 // ##############################################
 function rss() {
+    // TODO: Pull this from a config file or DB query
     $rssFeeds = array(
-        "Starsector"    => "https://fractalsoftworks.com/feed/",
-        //"Lofi Girl"     => "https://www.youtube.com/feeds/videos.xml?channel_id=UCSJ4gkVC6NrvII8umztf0Ow",
-        "Spyfall"       => "https://www.youtube.com/feeds/videos.xml?channel_id=UC2VARtDSExy9pY4WvTJKo1g",
-    );
+        "HauteLeMode"           => "https://www.youtube.com/feeds/videos.xml?channel_id=UCoEj4uRzynPXEEegNqMnJVw",
+        "Mike's Mic"            => "https://www.youtube.com/feeds/videos.xml?channel_id=UCuwUl4_fcRio_valO7_lxjA",
+        "Tee Noir"              => "https://www.youtube.com/feeds/videos.xml?channel_id=UCaZ8Nik2OV2r7vZm8Xsi3mQ",
+        "Dylan Is In Trouble"   => "https://www.youtube.com/feeds/videos.xml?channel_id=UCF_votze88WRDSEREe9s3aQ",
+        "Lorry Hill"            => "https://www.youtube.com/feeds/videos.xml?channel_id=UCnClOuzfbOj3ZcUKs2GahjA",
+    );    
+    
     $feed = array();
     foreach($rssFeeds as $from => $url) {
         $rss = new SimpleXMLElement(getRss($url));
-        switch ($from) {
-            case "Starsector":
-                $feed = array_merge($feed, rssStarsector($rss));
-                break;
-            // YouTube channels
-            case "Lofi Girl":
-            case "Spyfall":
-                $feed = array_merge($feed, rssYouTube($rss));
-                break;
-            default:    // TODO: Mess with this
-                //$feed[$from] = array("date"=>new DateTimeImmutable('1/1/1900'), "htmlString"=>"Create a case for ".$feed);
-        }
+        $feed = array_merge($feed, rssYouTube($rss));
+        // switch ($from) {
+        //     case "Starsector":
+        //         $feed = array_merge($feed, rssStarsector($rss));
+        //         break;
+        //     // YouTube channels
+        //     case "HauteLeMode":
+        //     case "Mike's Mic":
+        //         $feed = array_merge($feed, rssYouTube($rss));
+        //         break;
+        //     default:    // TODO: Mess with this
+        //         //$feed[$from] = array("date"=>new DateTimeImmutable('1/1/1900'), "htmlString"=>"Create a case for ".$feed);
+        // }
     }
     
     usort($feed, "dateSort");

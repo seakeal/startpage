@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32px" height="32px" id="RSSicon" viewBox="0 0 256 256">
+    <defs>
+    </defs>
+    <rect width="256" height="256" rx="55" ry="55" x="0" y="0" fill="#EEEDEB"/>
+    <rect x="32" y="54" width="192" height="154" rx="20" ry="20"
+        style="fill:rgb(0,0,0);fill-opacity:0;stroke-width:28;stroke:rgb(153,0,0)" />
+    <path d="M 32 54 L 128 150 L 228 54"
+        stroke="rgb(153,0,0)" stroke-width="28" fill="none" />
+</svg>

@@ -32,11 +32,52 @@
         <!-- <div class="content" id="leftBar" style="width:89px; height:299px;"><img class="penguin" id="left-penguin" src="img/iu.png" alt="penguin not found"></div> -->
         <div class="content" id="mainBar">
             <div class="welcomeMsg" id="welcomeMsg">
-                <p>Welcome Nic</p>
+                <p>Welcome Randy</p>
             </div>
+            <!-- 
+                Wikipedia
+                Gmail
+                Streaming
+                    Netflix
+                Amazon
+                Typing Website
+                YouTube
+                    HauteLeMode
+                    Mike's Mic
+                    Tee Noir
+                    Dylan is in Trouble
+                    Lorry
+             -->
             <div class="bookmarks" id="bookmarks">
-                <ul class="bookmarksList" id="bm1" >
-                    <li><a href="https://uisapp2.iu.edu/jira-prd/secure/Dashboard.jspa?selectPageId=54021" class="clink" target="_blank">JIRA</a></li>
+                <?php
+                function buildBookmark($name, $link) {
+                    echo "<li><a href=\"$link\" class=\"clink\" target=\"_blank\">$name</a></li>";
+                }
+
+                // TODO: Pull this from a config file or DB query
+                $bookmarks = array(
+                    "Wikipedia" => "https://www.wikipedia.org/",
+                    "Gmail"     => "https://www.gmail.com/",
+                    "Amazon"    => "https://smile.amazon.com/",
+                    "Netflix"   => "https://www.netflix.com/",
+                );
+
+                $i = 0;
+                $column = 1;
+                foreach($bookmarks as $name => $link) {
+                    if ($i == 0)
+                        echo "<ul class=\"bookmarksList\" id=\"bm$column\" >";
+                    buildBookmark($name, $link);
+                    $i++;
+                    if ($i == 2) {
+                        echo "</ul>";
+                        $i = 0;
+                        $column++;
+                    }
+                }
+                ?>
+                <!-- <ul class="bookmarksList" id="bm1" >
+                    <li><a href="https://www.wikipedia.org/" class="clink" target="_blank">Wikipedia</a></li>
                     <li><a href="https://one.iu.edu/" class="clink" target="_blank">One.IU</a></li>
                     <li><a href="https://github.com/seakeal" class="clink" target="_blank">GitHub</a></li>
                     <li><a href="https://www.google.com/maps/" class="clink" target="_blank">Maps</a></li>
@@ -52,12 +93,25 @@
                     <li><a href="https://uisapp2.iu.edu/confluence-prd/pages/viewpage.action?spaceKey=BRTE&title=Commands" class="clink" target="_blank">BRTE Docs</a></li>
                     <li><a href="https://kb.iu.edu/" class="clink" target="_blank">Knowledge Base</a></li>
                     <li><a href="https://docs.oracle.com/cd/F52213_01/pt859pbr3/eng/pt/index.html" class="clink" target="_blank">PeopleBooks</a></li>
-                </ul>
+                </ul> -->
             </div>
         </div>
     </div>
-    <div id="rssButton" onclick="toggleRss()">
-        <!-- JavaScript updates this section  -->
+    <div id="icons">
+        <div id="rssButton" class="iconButtons" onclick="toggleRss()">
+            <!-- JavaScript updates this section  -->
+        </div>
+        <div id="mailButton" class="iconButtons" style="margin-left: 316px; margin-top: -100px;">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32px" height="32px" id="RSSicon" viewBox="0 0 256 256">
+                <defs>
+                </defs>
+                <rect width="256" height="256" rx="55" ry="55" x="0" y="0" fill="#EEEDEB"/>
+                <rect x="32" y="54" width="192" height="154" rx="20" ry="20"
+                    style="fill:rgb(0,0,0);fill-opacity:0;stroke-width:28;stroke:rgb(153,0,0)" />
+                <path d="M 32 54 L 128 150 L 228 54"
+                    stroke="rgb(153,0,0)" stroke-width="28" fill="none" />
+            </svg>
+        </div>
     </div>
     <div id="rssContainer" class="rssContainer" style="visibility: hidden;">
         <!-- JavaScript updates this section  -->

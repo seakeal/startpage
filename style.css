@@ -135,11 +135,10 @@ background-color: #f45252;
     margin: 0px;
 }
 
-#rssButton {
+.iconButtons {
     position:fixed;
     left: 50%;
     top: 50%;
-    margin-top: -160px;
     padding: 0px;
     text-align: center;
     /* width: 36px;
