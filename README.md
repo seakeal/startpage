@@ -1,5 +1,5 @@
-# Nic's Startpage
-This is a version of my startpage with links for work at IU.
+# Randy's Startpage
+This is a branch of my startpage designed for my spooky girlfriend.
 
-This is what my page looks like.
+This is what their page looks like.
 ![Image not found](img/example.png)
