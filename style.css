@@ -40,15 +40,16 @@ body {
     margin-top: 35px;
 } */
 
-/* .bgContainer{
-    position: fixed;
+.bgContainer{
+    margin: 0px;
+    /* position: fixed;
     z-index: 0;
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
-    width: 50%;
-} */
+    width: 50%; */
+}
 
 #watermark {
     position: fixed;
@@ -82,12 +83,15 @@ body {
 }
 
 .rssContainer {
+    visibility: hidden;
+
     position:fixed;
     left: 50%;
     top: 50%;
     margin-left: 304px;
     margin-top: -183px;
     padding-left: 10px;
+    padding-right: 6px;
     width: 250px;
     height: 350px;
     background-color: rgba(131, 2, 2, 0.6); 
@@ -97,6 +101,56 @@ body {
     z-index: 0;
 }
 
+.rssElement {
+    height: 80px;
+    margin: 0px;
+    padding: 2px;
+    background-color: rgba(87, 1, 1, 0.6);
+    border: 2px solid rgba(153,00,00);
+    border-bottom: 0px;
+    overflow: hidden;
+}
+
+/* icon-color-test {
+background-color: #e32d2d;
+background-color: #ea3131;
+
+background-color: #f63737;
+background-color: #fb3a3a;
+
+background-color: #ea3131;
+background-color: #de2b2b;
+
+background-color: #d92929;
+
+background-color: #cc1515;
+background-color: #f45252;
+} */
+
+.rssElement h3 {
+    margin: 0px;
+}
+
+.rssElement p {
+    margin: 0px;
+}
+
+#rssButton {
+    position:fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: -160px;
+    padding: 0px;
+    text-align: center;
+    /* width: 36px;
+    height: 36px;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(153, 0, 0, 1);
+    background-color: rgba(238, 237, 235, 1);
+    border: 2px solid rgba(238, 237, 235, 1);
+    border-radius: 15%; */
+}
 
 .time {
     text-align: center;

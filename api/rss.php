@@ -1,39 +1,58 @@
 <?php
 
 // Constants
-//$dateFormat = 'D, d M Y';
-//$dateFormat = 'M d, Y';
-$dateFormat = 'Y,m,d,h,i,s';
+$dateFormat = 'Y m d h i s';
 
-function getRss($feed) : string {
-    $ch = curl_init($feed);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    
-    $rssOut = curl_exec($ch);
-    if(curl_error($ch)) {
-        $rssOut = curl_error($ch);
-    }
-    curl_close($ch);
-    
-    return $rssOut;
+// ##############################################
+// ## Utility functions
+// ##############################################
+
+// Consistent format for the RSS arrays returned to the main feed
+function buildReturnArray(&$array, $source, $title, $link, $date, $html) {
+    $array[] = array("source"=>$source, "title"=>$title, "link"=>$link, "date"=>$date, "html"=>$html);
 }
 
-function htmlLink($link, $text="", $class="", $id="") {
+// Callback to sort feed by date
+function dateSort($a, $b) : int {
+    if ($a["date"] == $b["date"])
+        return 0;
+    return $a["date"] > $b["date"] ? -1 : 1;
+}
+
+// Builds an <a> tag string cleanly
+function htmlLink($link, $text="", $class="", $id="") : string {
     $htmlString = '<a ';
 
     if ($class <> "")
         $htmlString .= 'class="'.$class.'" ';
     if ($id <> "")
         $htmlString .= 'id="'.$id.'" ';
-    $htmlString .= 'href="'.$link.'">'.$text.'</a>';
+    $htmlString .= 'href="'.$link.'" target="_blank">'.$text.'</a>';
     
     return $htmlString;
 }
 
-function rssStarsector($rss) {
+// ##############################################
+// ## RSS Functions
+// ##############################################
+
+// cURL to get RSS feed from source
+function getRss($feed) : string {
+    $ch = curl_init($feed);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $rssOut = curl_exec($ch);
+    if(curl_error($ch))
+        $rssOut = curl_error($ch);
+    curl_close($ch);
+    return $rssOut;
+}
+
+function rssStarsector($rss) : array {
     // Variables
     global $dateFormat;
+    $source = "Starsector";
+    $link = "https://fractalsoftworks.com/";
     $dateLength = 16;
 
     $feed = array();
@@ -42,18 +61,19 @@ function rssStarsector($rss) {
         $article = $rss->channel->item[$i];
         $pubDate = DateTimeImmutable::createFromFormat('D, d M Y H:i:s', substr($article->pubDate,0,25))->format($dateFormat);
         $htmlString  = '<div class="rss-starsector" id="starsector'.$i.'">';
-        $htmlString .= '<b><p>'.htmlLink($article->link,$article->title).'</p></b>';
+        $htmlString .= '<p>'.htmlLink($article->link,$article->title).'</p>';
         $htmlString .= '<p>'.substr($article->description,0,-10).'&#8230;</p>';
         $htmlString .= '</div>';
-        array_push($feed, array("source"=>"Starsector", "title"=>"Starsector", "link"=>"https://fractalsoftworks.com/", "date"=>$pubDate, "html"=>$htmlString));
+        buildReturnArray($feed, $source, $source, $link, $pubDate, $htmlString);
     }
 
     return $feed;
    
 }
 
-function rssYouTube($rss) {
+function rssYouTube($rss) : array {
     // **** Code to find YouTube creator ID ****
+    // **** Inspect YT channel page and paste into JS console ****
     // for (var arrScripts = document.getElementsByTagName('script'), i = 0; i < arrScripts.length; i++) {
     //     if (arrScripts[i].textContent.indexOf('externalId') != -1) {
     //         var channelId = arrScripts[i].textContent.match(/\"externalId\"\s*\:\s*\"(.*?)\"/)[1];
@@ -66,6 +86,7 @@ function rssYouTube($rss) {
 
     // Variables
     global $dateFormat;
+    $source = "YouTube";
     $author = $rss->author;
 
     // Cast as string or becomes SimpleXML object
@@ -75,15 +96,18 @@ function rssYouTube($rss) {
         $entry  = $rss->entry[$i];
         $pubDate = DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s',substr($entry->published,0,19))->format($dateFormat);
         $htmlString  = '<div class="rss-youtube" id="'.$author->name.$i.'">';
-        $htmlString .= '<b><p>'.htmllink($entry->link["href"],$entry->title).'</p></b>';
-        // $htmlString .= '<p>'.$entry->media["description"].'</p>';
+        $htmlString .= '<p>'.htmllink($entry->link["href"],$entry->title).'</p>';
+        // $htmlString .= '<p>'.$entry->media["description"].'</p>'; // Limited by YouTube and SimpleXMLElement
         $htmlString .= "</div>";
-        array_push($feed, array("source"=>"YouTube", "title"=>(string)$author->name, "link"=>(string)$author->uri, "date"=>$pubDate, "html"=>$htmlString));
+        buildReturnArray($feed, $source, (string)$author->name, (string)$author->uri, $pubDate, $htmlString);
     }
 
     return $feed;
 }
 
+// ##############################################
+// ## Main Function
+// ##############################################
 function rss() {
     $rssFeeds = array(
         "Starsector"    => "https://fractalsoftworks.com/feed/",
@@ -107,6 +131,8 @@ function rss() {
         }
     }
     
+    usort($feed, "dateSort");
+    // Output
     echo json_encode($feed);
 }
 

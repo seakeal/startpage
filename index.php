@@ -3,7 +3,8 @@
 
 
 ?>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="utf-8" />
     <meta name="description" content="A startpage designed to fit my aesthetic and be friendly for evening use. This version is for my work computer at IU." />
@@ -55,7 +56,10 @@
             </div>
         </div>
     </div>
-    <div id="rssContainer" class="rssContainer">
+    <div id="rssButton" onclick="toggleRss()">
+        <!-- JavaScript updates this section  -->
+    </div>
+    <div id="rssContainer" class="rssContainer" style="visibility: hidden;">
         <!-- JavaScript updates this section  -->
     </div>
 </body>
