@@ -27,6 +27,6 @@ function countdownToNextHalloween() {
     timeUntil -= minUntil*60000;
     let secUntil = Math.floor(timeUntil/1000);
 
-    document.getElementById('halloweenCd').innerHTML = `${daysUntil} days ${hoursUntil} hours ${minUntil} minutes ${secUntil} seconds`;
+    document.getElementById('halloweenCd').innerHTML = `Countdown to Halloween ${nextHalloween.getFullYear()}: ${daysUntil} days ${hoursUntil} hours ${minUntil} minutes ${secUntil} seconds`;
     setTimeout(countdownToNextHalloween, 1000);
 }

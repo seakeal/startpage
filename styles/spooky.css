@@ -1,3 +1,9 @@
+:root {
+    --main-color: #bd96d4;
+    --accent-color: #845d9b;
+    --background-color: #634575;
+}
+
 @font-face {
     font-family: "JosefinSans";
     src: url('fonts/JosefinSans/JosefinSans-VariableFont_wght.ttf');
@@ -10,13 +16,13 @@
 
 /* Body and background */
 
-/* * {
-    color: #f7e69c;
+* {
+    color: var(--main-color);
     font-family: BentonSans;
     font-size: 18px;
-    margin-bottom: 10px;
-    animation: text-glow 1s ease-in-out infinite alternate;
-} */
+    /* margin-bottom: 10px;
+    animation: text-glow 1s ease-in-out infinite alternate; */
+}
 
 @keyframes text-glow {
     from {
@@ -35,66 +41,177 @@
 
 body {
     height: 100vh;
-    background-color: rgba(00,00,00,0.3);
+    margin: 0px;
+    background-color: var(--accent-color);
     /* background: linear-gradient(180deg, rgb(19, 1, 37) 0%, rgb(44, 1, 80) 35%, rgb(42, 1, 61) 100%); */
     overflow: hidden;
 }
 
 /* background-color: rgb(39, 21, 54); */
 
-.bgContainer{
+.bgContainer {
     margin: 0px;
-    /* position: fixed;
+    position: fixed;
     z-index: 0;
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
-    width: 50%; */
+    width: 50%;
 }
 
 /* END Body and Background */
 
+.container {
+    position: fixed;
+    left: 50%;
+    /* top: 50%; */
+    margin-left: -454px;
+    width: 900px;
+    background-color: var(--background-color);
+    /* border: 6px ridge rgb(68, 42, 83); */
+    z-index: 1;
+}
+
+#mainContainer {
+    
+    /* margin-top: -303px; */
+    /*padding-top: 35px;
+    padding-right: 0px;
+    padding-left: 15px;
+    padding-bottom: -10px; */
+    /* border-radius: 5px; */
+    /* background-color: rgba(38,48,72,0.8); */
+    /* animation: mc-background 6s linear infinite; */
+    
+    height: 100%;
+}
+
+/* #countdownContainer {
+    margin-top: 5   0px;
+    padding-top: 35px;
+    padding-right: 0px;
+    padding-left: 15px;
+    padding-bottom: -10px;
+    
+    border-radius: 5px;
+    background-color: rgba(38,48,72,0.8);
+    animation: mc-background 6s linear infinite;
+    height: 20px;
+    z-index: 1;
+} */
+
+/* Date, Time, & Countdown */
+
+.time {
+    /* position: fixed; */
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 0px;
+    /* padding-top: 20px; */
+}
+
+#clockTime {
+    font-size: 128px;
+}
+
+#clockDate {
+    font-size: 24px;
+}
+
+#halloweenCd {
+    font-size: 24px;
+}
+
+/* END Date, Time, & Countdown */
+
+/* Right Window */
+ 
+.rightWindow {
+    position: fixed;
+    margin: 0;
+    margin-left: 604px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    /* border: 10px ridge rgba(00,00,128,1); */
+    background-color: rgb(83, 83, 83);
+    z-index: 0;
+}
+
+/* END Right Window */
+
 /* Bookmarks */
+
+#bookmarks {
+    margin-left: 150px;
+    /* display: flex;
+    width: 300px;
+    margin-left: 75px;
+    -ms-flex-align: baseline;
+    align-self: center;
+    height: 128px; */
+}
+
+.bookmarks td {
+    text-align: center;
+    width: 200px;
+    height: 128px;
+}
+
+.bookmarksList {
+    /* width: 33%;
+    float: left;
+    padding: 0px; */
+}
 
 .bookmarks ul {
     list-style-type:none;
+    
     /*width:75px;
     float:left;
     padding-left:0px;
     padding-right:0px;
     margin-left:18px;
-    margin-right:18px;*/
+    margin-right:18px; */
 }
+
+
 
 .bookmarks li {
+    /* display: table-cell;
+    vertical-align: middle;
     margin-bottom: 10px;
+    border: 2px solid black; */
 }
 
+/* ************************************************** */
+
 .bookmarks img {
-    height: 32px;
-    padding: 3px;
+    height: 64px;
+    /* padding: 3px;
     padding-top: 6px;
     padding-left: 10px;
     padding-right: 10px;
     border: 5px ridge rgba(255,255,255,0);
-    /* background-color: rgba(00,00,00,0.5); */
+    background-color: rgba(00,00,00,0.5);
+    border-radius: 10px; */
+}
+
+.bookmarks td:hover {
+    /* border: 6px ridge #fff; */
     border-radius: 10px;
+    /* background-color: var(--main-color); */
+    /* animation: glow 1s ease-in-out infinite alternate;; */
 }
 
-.bookmarks img:hover {
-    /* border: 5px ridge #FFF; */
-    animation: box-glow 1s ease-in-out infinite alternate;;
-    /* border-radius: 10px; */
-    background-color: #f7e69c99;
-}
-
-@keyframes box-glow {
+@keyframes glow {
     from {
-        box-shadow: 0 0 5px #f7e69e, 0 0 10px #f7e69e, 0 0 15px #daba2e, 0 0 20px #c0a21f, 0 0 25px #d4b216, 0 0 30px #ecc413, 0 0 35px #f7e69c99;
+        box-shadow: 0 0 5px #f7e69e, 0 0 10px #f7e69e, 0 0 15px #daba2e, 0 0 20px #c0a21f, 0 0 25px #d4b216, 0 0 30px #ecc413, 0 0 35px #f7e69c;
     }
     to {
-        box-shadow: 0 0 10px #f7e69e, 0 0 15px #e7c942, 0 0 20px #e7c632, 0 0 25px #f0c819, 0 0 30px #d8b30d, 0 0 35px #c2a008, 0 0 40px #f7e69c99;
+        box-shadow: 0 0 10px #f7e69e, 0 0 15px #e7c942, 0 0 20px #e7c632, 0 0 25px #f0c819, 0 0 30px #d8b30d, 0 0 35px #c2a008, 0 0 40px #f7e69c;
     }
 }
 

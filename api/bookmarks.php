@@ -41,7 +41,7 @@
         ),
     );
 
-    $size = -1;
+    $size = 2;
     $i = 0;
     $column = 1;
     foreach($bookmarks as $name => $link) {
