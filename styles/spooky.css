@@ -156,6 +156,7 @@ body {
 
 .bookmarks td {
     text-align: center;
+    border-bottom: 2px solid var(--background-color);
     width: 200px;
     height: 128px;
 }
@@ -201,7 +202,8 @@ body {
 
 .bookmarks td:hover {
     /* border: 6px ridge #fff; */
-    border-radius: 10px;
+    border-bottom: 2px solid var(--accent-color);
+    /* border-radius: 10px; */
     /* background-color: var(--main-color); */
     /* animation: glow 1s ease-in-out infinite alternate;; */
 }
