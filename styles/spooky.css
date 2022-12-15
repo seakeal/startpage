@@ -4,14 +4,25 @@
     --background-color: #634575;
 }
 
+
+@font-face {
+    font-family: "Creepster";
+    src: url('../fonts/Creepster/Creepster-Regular.ttf');
+}
+
 @font-face {
     font-family: "JosefinSans";
-    src: url('fonts/JosefinSans/JosefinSans-VariableFont_wght.ttf');
+    src: url('../fonts/JosefinSans/JosefinSans-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: "Jua";
+    src: url('../fonts/Jua/Jua-Regular.ttf');
 }
 
 @font-face {
     font-family: "TulpenOne";
-    src: url('fonts/TulpenOne/TulpenOne-Regular.ttf');
+    src: url('../fonts/TulpenOne/TulpenOne-Regular.ttf');
 }
 
 /* Body and background */
@@ -121,7 +132,8 @@ body {
 }
 
 #halloweenCd {
-    font-size: 24px;
+    font-size: 28px;
+    font-family: Creepster;
 }
 
 /* END Date, Time, & Countdown */
@@ -145,7 +157,7 @@ body {
 /* Bookmarks */
 
 #bookmarks {
-    margin-left: 150px;
+    margin-left: 50px;
     /* display: flex;
     width: 300px;
     margin-left: 75px;
