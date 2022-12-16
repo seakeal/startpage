@@ -10,6 +10,7 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
     <title>Start Page</title>
     <script type="text/javascript" src="src/clock.js"></script>
+    <script type="text/javascript" src="src/ghost.js"></script>
     <script type="text/javascript" src="src/halloweenCountdown.js"></script>
 </head>
 <body>
@@ -44,7 +45,7 @@
                         <a href="https://www.disneyplus.com/" class="clink" target="_blank"><img class="clinkImg" id="clinkImgDisney+" src="img/Disney+_logo_p.svg" alt="Disney+ logo not found"></a>
                     </td>
                     <td>
-                        <a href="https://www.youtube.com/" class="clink" target="_blank"><img class="clinkImg" id="clinkImgYouTube" src="img/YouTube_full-color_icon_(2017)_p.svg" alt="YouTube logo not found"></a>
+                        <a href="https://www.youtube.com/feed/subscriptions/" class="clink" target="_blank"><img class="clinkImg" id="clinkImgYouTube" src="img/YouTube_full-color_icon_(2017)_p.svg" alt="YouTube logo not found"></a>
                     </td>
                 </tr> 
             </table>           
@@ -52,6 +53,10 @@
         <div class="time" id="halloweenCd">
             error: halloween countdown function broken
         </div>
+        <div class="gravestone">
+            <img src="img/gravestone.png" alt="gravestone not found" id="gravestone" onclick="activateGhost()">
+        </div>
     </div>
+    <div class="ghost"><img src="img/ghost.png" alt="" id="ghost"></div>
 </body>
 </html>

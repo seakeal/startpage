@@ -2,6 +2,10 @@
     --main-color: #bd96d4;
     --accent-color: #845d9b;
     --background-color: #634575;
+
+    --z-ghost: 3;
+    --z-container: 1;
+    --z-bg: 0;
 }
 
 
@@ -63,7 +67,7 @@ body {
 .bgContainer {
     margin: 0px;
     position: fixed;
-    z-index: 0;
+    z-index: var(--z-bg);
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -81,7 +85,7 @@ body {
     width: 900px;
     background-color: var(--background-color);
     /* border: 6px ridge rgb(68, 42, 83); */
-    z-index: 1;
+    z-index: var(--z-container);
 }
 
 #mainContainer {
@@ -109,7 +113,7 @@ body {
     background-color: rgba(38,48,72,0.8);
     animation: mc-background 6s linear infinite;
     height: 20px;
-    z-index: 1;
+    z-index: var(--z-container);
 } */
 
 /* Date, Time, & Countdown */
@@ -149,7 +153,7 @@ body {
     height: 100%;
     /* border: 10px ridge rgba(00,00,128,1); */
     background-color: rgb(83, 83, 83);
-    z-index: 0;
+    z-index: var(--z-bg);
 }
 
 /* END Right Window */
@@ -230,3 +234,24 @@ body {
 }
 
 /* END Bookmarks */
+
+/* Ghost */
+
+#ghost {
+    visibility: hidden;
+    position: absolute;
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
+    z-index: var(--z-ghost);
+}
+
+#gravestone {
+    position: fixed;
+    height: 70px;
+    left: 50%;
+    margin-left: -32px;
+    margin-top: 20px;
+}
+
+/* END Ghost */

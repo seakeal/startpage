@@ -27,6 +27,11 @@ function countdownToNextHalloween() {
     timeUntil -= minUntil*60000;
     let secUntil = Math.floor(timeUntil/1000);
 
-    document.getElementById('halloweenCd').innerHTML = `Countdown to Halloween ${nextHalloween.getFullYear()}: ${daysUntil} days ${hoursUntil} hours ${minUntil} minutes ${secUntil} seconds`;
+    let days = daysUntil === 1 ? 'day' : 'days';
+    let hours = hoursUntil === 1 ? 'hour' : 'hours';
+    let mins = minUntil === 1 ? 'minute' : 'minutes';
+    let secs = secUntil === 1 ? 'second' : 'seconds';
+
+    document.getElementById('halloweenCd').innerHTML = `Countdown to Halloween ${nextHalloween.getFullYear()}: ${daysUntil} ${days} ${hoursUntil} ${hours} ${minUntil} ${mins} ${secUntil} ${secs}`;
     setTimeout(countdownToNextHalloween, 1000);
 }
