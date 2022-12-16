@@ -1,0 +1,264 @@
+:root {
+    --main-color: #bd96d4;
+    --accent-color: #845d9b;
+    --background-color: #634575;
+
+    --z-ghost: 3;
+    --z-container: 1;
+    --z-bg: 0;
+}
+
+
+@font-face {
+    font-family: "Creepster";
+    src: url('../fonts/Creepster/Creepster-Regular.ttf');
+}
+
+@font-face {
+    font-family: "JosefinSans";
+    src: url('../fonts/JosefinSans/JosefinSans-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: "Jua";
+    src: url('../fonts/Jua/Jua-Regular.ttf');
+}
+
+@font-face {
+    font-family: "TulpenOne";
+    src: url('../fonts/TulpenOne/TulpenOne-Regular.ttf');
+}
+
+/* Body and background */
+
+* {
+    color: var(--main-color);
+    font-family: BentonSans;
+    font-size: 18px;
+    /* margin-bottom: 10px;
+    animation: text-glow 1s ease-in-out infinite alternate; */
+}
+
+@keyframes text-glow {
+    from {
+        text-shadow: 0 0 5px #f7e69e, 0 0 10px #f7e69e, 0 0 15px #daba2e, 0 0 20px #c0a21f, 0 0 25px #d4b216, 0 0 30px #ecc413, 0 0 35px #facc00;
+    }
+    to {
+        text-shadow: 0 0 10px #f7e69e, 0 0 15px #e7c942, 0 0 20px #e7c632, 0 0 25px #f0c819, 0 0 30px #d8b30d, 0 0 35px #c2a008, 0 0 40px #b4950a;
+    }
+    /* from {
+        text-shadow: 0 0 10px #f7e69e, 0 0 20px #f7e69e, 0 0 30px #daba2e, 0 0 40px #c0a21f, 0 0 50px #d4b216, 0 0 60px #ecc413, 0 0 70px #facc00;
+    }
+    to {
+        text-shadow: 0 0 20px #f7e69e, 0 0 30px #e7c942, 0 0 40px #e7c632, 0 0 50px #f0c819, 0 0 60px #d8b30d, 0 0 70px #c2a008, 0 0 80px #b4950a;
+    } */
+}
+
+body {
+    height: 100vh;
+    margin: 0px;
+    background-color: var(--accent-color);
+    /* background: linear-gradient(180deg, rgb(19, 1, 37) 0%, rgb(44, 1, 80) 35%, rgb(42, 1, 61) 100%); */
+    overflow: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+    display: none;
+}
+
+/* background-color: rgb(39, 21, 54); */
+
+.bgContainer {
+    margin: 0px;
+    position: fixed;
+    z-index: var(--z-bg);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: 50%;
+}
+
+/* END Body and Background */
+
+.container {
+    position: fixed;
+    left: 50%;
+    /* top: 50%; */
+    margin-left: -454px;
+    width: 900px;
+    background-color: var(--background-color);
+    /* border: 6px ridge rgb(68, 42, 83); */
+    z-index: var(--z-container);
+}
+
+#mainContainer {
+    
+    /* margin-top: -303px; */
+    /*padding-top: 35px;
+    padding-right: 0px;
+    padding-left: 15px;
+    padding-bottom: -10px; */
+    /* border-radius: 5px; */
+    /* background-color: rgba(38,48,72,0.8); */
+    /* animation: mc-background 6s linear infinite; */
+    
+    height: 100%;
+}
+
+/* #countdownContainer {
+    margin-top: 5   0px;
+    padding-top: 35px;
+    padding-right: 0px;
+    padding-left: 15px;
+    padding-bottom: -10px;
+    
+    border-radius: 5px;
+    background-color: rgba(38,48,72,0.8);
+    animation: mc-background 6s linear infinite;
+    height: 20px;
+    z-index: var(--z-container);
+} */
+
+/* Date, Time, & Countdown */
+
+.time {
+    /* position: fixed; */
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 0px;
+    /* padding-top: 20px; */
+}
+
+#clockTime {
+    font-size: 128px;
+}
+
+#clockDate {
+    font-size: 24px;
+}
+
+#halloweenCd {
+    font-size: 28px;
+    font-family: Creepster;
+}
+
+/* END Date, Time, & Countdown */
+
+/* Right Window */
+ 
+.rightWindow {
+    position: fixed;
+    margin: 0;
+    margin-left: 604px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    /* border: 10px ridge rgba(00,00,128,1); */
+    background-color: rgb(83, 83, 83);
+    z-index: var(--z-bg);
+}
+
+/* END Right Window */
+
+/* Bookmarks */
+
+#bookmarks {
+    margin-left: 50px;
+    /* display: flex;
+    width: 300px;
+    margin-left: 75px;
+    -ms-flex-align: baseline;
+    align-self: center;
+    height: 128px; */
+}
+
+.bookmarks td {
+    text-align: center;
+    border-bottom: 2px solid var(--background-color);
+    width: 200px;
+    height: 128px;
+}
+
+/* .bookmarksList {
+    width: 33%;
+    float: left;
+    padding: 0px;
+} */
+
+.bookmarks ul {
+    list-style-type:none;
+    
+    /*width:75px;
+    float:left;
+    padding-left:0px;
+    padding-right:0px;
+    margin-left:18px;
+    margin-right:18px; */
+}
+
+
+
+/* .bookmarks li {
+    display: table-cell;
+    vertical-align: middle;
+    margin-bottom: 10px;
+    border: 2px solid black;
+} */
+
+/* ************************************************** */
+
+.bookmarks img {
+    height: 64px;
+    /* padding: 3px;
+    padding-top: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 5px ridge rgba(255,255,255,0);
+    background-color: rgba(00,00,00,0.5);
+    border-radius: 10px; */
+}
+
+.bookmarks td:hover {
+    /* border: 6px ridge #fff; */
+    border-bottom: 2px solid var(--accent-color);
+    /* border-radius: 10px; */
+    /* background-color: var(--main-color); */
+    /* animation: glow 1s ease-in-out infinite alternate;; */
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px #f7e69e, 0 0 10px #f7e69e, 0 0 15px #daba2e, 0 0 20px #c0a21f, 0 0 25px #d4b216, 0 0 30px #ecc413, 0 0 35px #f7e69c;
+    }
+    to {
+        box-shadow: 0 0 10px #f7e69e, 0 0 15px #e7c942, 0 0 20px #e7c632, 0 0 25px #f0c819, 0 0 30px #d8b30d, 0 0 35px #c2a008, 0 0 40px #f7e69c;
+    }
+}
+
+/* END Bookmarks */
+
+/* Ghost */
+
+#ghost {
+    visibility: hidden;
+    position: absolute;
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
+    z-index: var(--z-ghost);
+}
+
+#gravestone {
+    position: fixed;
+    height: 70px;
+    left: 50%;
+    margin-left: -32px;
+    margin-top: 20px;
+}
+
+/* END Ghost */

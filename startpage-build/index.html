@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+    <meta name="description" content="A startpage designed to fit Randy's aesthetic and be friendly for evening use (maybe). This version is for my lovely girlfriend Randy." />
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link href="https://fonts.iu.edu/style.css?family=BentonSans:regular,bold|BentonSansCond:regular|GeorgiaPro:regular" media="screen" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="styles/spooky.css" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <title>&#128155;&#128128;&#128123;&#128155;</title>
+    <script type="text/javascript" src="src/clock.js"></script>
+    <script type="text/javascript" src="src/ghost.js"></script>
+    <script type="text/javascript" src="src/halloweenCountdown.js"></script>
+</head>
+<body>
+    <div class="container" id="mainContainer">
+        <div class="time" id="clock">
+            error: clock function broken
+        </div>
+        <div class="bookmarks" id="bookmarks">
+            <!-- TODO: Do better CSS -->
+            <table class="bookmarksTable" id="bookmarksTable">
+                <tr>
+                    <td>
+                        <a href="https://www.wikipedia.org/" class="clink" target="_blank"><img class="clinkImg" id="clinkImgWikipedia" src="img/icons/wikipedia.svg" alt="Wikipedia logo not found"></a>
+                    </td>
+                    <td>
+                        <a href="https://10fastfingers.com/" class="clink" target="_blank"><img class="clinkImg" id="clinkImg10FastFingers" src="img/icons/10fastfingers.png" alt="10FastFingers logo not found"></a>
+                    </td>
+                    <td>
+                        <a href="https://www.gmail.com/" class="clink" target="_blank"><img class="clinkImg" id="clinkImgGmail" src="img/icons/gmail.svg" alt="Gmail logo not found"></a>            
+                    </td>
+                    <td>
+                        <a href="https://www.spotify.com/" class="clink" target="_blank"><img class="clinkImg" id="clinkImgSpotify" src="img/icons/spotify.svg" alt="Spotify logo not found"></a>            
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://smile.amazon.com/" class="clink" target="_blank"><img class="clinkImg" id="clinkImgAmazon" src="img/icons/amazon.svg" alt="Amazon logo not found"></a>
+                    </td>
+                    <td>
+                        <a href="https://www.netflix.com/" class="clink" target="_blank"><img class="clinkImg" id="clinkImgNetflix" src="img/icons/netflix.svg" alt="Netflix logo not found"></a>
+                    </td>
+                    <td>
+                        <a href="https://www.disneyplus.com/" class="clink" target="_blank"><img class="clinkImg" id="clinkImgDisney+" src="img/icons/disney+.svg" alt="Disney+ logo not found"></a>
+                    </td>
+                    <td>
+                        <a href="https://www.youtube.com/feed/subscriptions/" class="clink" target="_blank"><img class="clinkImg" id="clinkImgYouTube" src="img/icons/youtube.svg" alt="YouTube logo not found"></a>
+                    </td>
+                </tr> 
+            </table>           
+        </div>
+        <div class="time" id="halloweenCd">
+            error: halloween countdown function broken
+        </div>
+        <div class="gravestone">
+            <img src="img/ghost/gravestone.png" alt="gravestone not found" id="gravestone">
+        </div>
+    </div>
+    <div class="ghost"><img src="img/ghost/ghost.png" alt="" id="ghost"></div>
+</body>
+</html>
