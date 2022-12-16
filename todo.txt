@@ -1,0 +1,4 @@
+TO DO LIST:
+- Check code for TODO's (shift+ctrl+f: "todo")
+- Organize img folder
+- Write a script to create package for HTML
