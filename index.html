@@ -3,47 +3,39 @@
 <head>
     <meta charset="utf-8" />
     <meta name="description" content="A startpage designed to fit my aesthetic and be friendly for evening use." />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
+    <link rel="stylesheet" type="text/css" href="style-grid.css" />
     <title>Seakeal</title>
     <script type="text/javascript" src="src/clock.js"></script>
     <script type="text/javascript" src="src/background.js"></script>
 </head>
 <body>
+    <div id="mainContainer" class="mainContainer">
+        <div id="mainBar" class="content">
+            <div id="clock" class="clock">
+                error: clock function broken
+            </div>
+            <!-- <div class="content" id="leftBar" style="width:89px; height:299px; background-image: url('img/skull_left2.png');"></div> -->
+            <div id="welcomeMsg" class="welcomeMsg">
+                <p>Welcome Seakeal</p>
+            </div>
+            <div id="bookmarks" class="bookmarks">
+                <ul class="bookmarksList">
+                    <li><a href="https://github.com/seakeal" class="clink" target="_blank">GitHub</a></li>
+                    <li><a href="https://mail.google.com/mail/u/0" class="clink" target="_blank">Mail</a></li>
+                    <li><a href="https://open.spotify.com/" class="clink" target="_blank">Spotify</a></li>
+                    <li><a href="https://www.youtube.com/feed/subscriptions" class="clink" target="_blank">YouTube</a></li>                    
+                </ul>
+            </div>
+            <!-- <div class="content" id="rightBar" style="width:89px; height:299px; background-image: url('img/skull_right2.png');"></div> -->
+        </div>
+    </div>
     <div id="bgContainer" class="bgContainer">
         <canvas id="bgCanvas">
             error: your browser does not support the canvas element
         </canvas>
-    </div>
-    <div id="mainContainer" class="mainContainer">
-        <div class="time" id="time">
-            error: clock function broken
-        </div>
-        <div class="content" id="leftBar" style="width:89px; height:299px; background-image: url('img/skull_left2.png');"></div>
-        <div class="content" id="mainBar">
-            <div class="welcomeMsg" id="welcomeMsg">
-                <p>Welcome Seakeal</p>
-            </div>
-            <div class="bookmarks" id="bookmarks">
-                <ul class="bookmarksList" id="bm1" >
-                    <li><a href="https://docs.google.com/spreadsheets/d/1kmB35IPq_1NipQSbXu9DCaPBw1GI7jh9k_qy8QniqYI/" class="clink" target="_blank">Wild West</a></li>
-                    <li><a href="https://mail.protonmail.com/u/0/inbox" class="clink" target="_blank">ProtonMail</a></li>
-                    <li><a href="https://mail.google.com/mail/u/0" class="clink" target="_blank">Gmail</a></li>
-                </ul>
-                <ul class="bookmarksList" id="bm2" name="code">
-                    <li><a href="https://github.com/seakeal" class="clink" target="_blank">GitHub</a></li>
-                    <li><a href="https://leetcode.com/" class="clink" target="_blank">LeetCode</a></li>
-                </ul>
-                <ul class="bookmarksList" id="bm3" name="entertainment">
-                    <li><a href="https://open.spotify.com/" class="clink" target="_blank">Spotify</a></li>
-                    <li><a href="https://www.youtube.com/feed/subscriptions" class="clink" target="_blank">YouTube</a></li>
-                    <li><a href="https://rgl.gg/Public/PlayerProfile.aspx?p=76561198069388472" class="clink" target="_blank">RGL</a></li>
-                    
-                </ul>
-            </div>
-        </div>
-        <div class="content" id="rightBar" style="width:89px; height:299px; background-image: url('img/skull_right2.png');"></div>
     </div>
 </body>
 </html>
