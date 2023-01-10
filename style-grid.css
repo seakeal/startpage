@@ -44,7 +44,7 @@ ul {
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 80% 1fr;
-    grid-template-rows: 10px 100%;
+    grid-template-rows: 15% 85%;
     position: fixed;
     width: 100%;
 }
