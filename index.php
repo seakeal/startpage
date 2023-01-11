@@ -10,6 +10,7 @@
     <title>Seakeal</title>
     <script type="text/javascript" src="src/clock.js"></script>
     <script type="text/javascript" src="src/background.js"></script>
+    <script type="text/javascript" src="src/rss.js"></script>
 </head>
 <body>
     <div id="mainContainer" class="mainContainer">

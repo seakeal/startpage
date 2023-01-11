@@ -32,7 +32,7 @@ function animateBackground(x,y,c1,c2) {
         y = (y - 0.0025).toFixed(4);
     }
     var grad = ctx.createLinearGradient(0,0,0, window.innerHeight);
-    console.log(`x: ${x} y: ${y} c1: ${c1} c2: ${c2}`);
+    // console.log(`x: ${x} y: ${y} c1: ${c1} c2: ${c2}`);
     grad.addColorStop(x, c1);
     grad.addColorStop(y, c2);
     ctx.fillStyle = grad;
