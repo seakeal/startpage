@@ -1,0 +1,151 @@
+/* ## Variables ## */
+:root {
+    --main-color: #b8a692;
+    --secd-color: #a6363a;
+    --tert-color: #6d7665;
+    --text-color: #212035;
+
+    --bg-image: url("../img/wizard_bg_2.png");
+    --bg-repeat: url("../img/easybg.png");
+}
+
+/* ## Fonts ## */
+
+@font-face {
+    font-family: "JosefinSans";
+    src: url('fonts/JosefinSans/JosefinSans-VariableFont_wght.ttf');
+}
+
+/* ## Global ## */
+
+* {
+    color: var(--text-color);
+    font-family: JosefinSans;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* ## Containers ## */
+
+.bgContainer {
+    height: 100%;
+    position: fixed;
+    z-index: -5;
+}
+
+.mainContainer {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 20% 45% 1fr;
+    grid-template-rows: 10% 10% 1fr;
+    position: fixed;
+    width: 100%;
+}
+
+/* ## Components ## */
+
+/* Background */
+
+#background {
+    background-image: var(--bg-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column-start: 2;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    z-index: -1;
+}
+
+/* End Background */
+
+/* Bookmarks */
+
+#bookmarks {
+    /* background-color: var(--main-color); */
+    background-image: var(--bg-repeat);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-right: 5px ridge var(--secd-color); 
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    height: 100%;
+    text-align: center;
+}
+
+#bookmarks ul {
+    margin-top: 50%;
+}
+
+/* #bookmarks li {
+    margin-top: 30px;
+} */
+
+#bookmarks a {
+    border-radius: 10px;
+    display: block;
+    margin-left: 20%;
+    padding: 15px;
+    width: 50%;
+    
+}
+
+#bookmarks a:hover {
+    background-color: var(--tert-color);
+    display: block;
+}
+
+/* End Bookmarks */
+
+/* Clock */
+
+#clock {
+    /* display: grid; */
+
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    /* grid-template-columns: 20%; */
+    grid-template-rows: 50%;
+}
+
+.time {
+    margin-top: 15px;
+    margin-right: 30px;
+    text-align: right;
+}
+
+/* #clockDate {
+    border: 2px solid black;
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    text-align: right;
+    padding-top: 10px;
+    padding-right: 30px;
+}
+
+#clockTime {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+} */
+
+/* End Clock */

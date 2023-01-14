@@ -1,3 +1,12 @@
+/*
+Add this code to your site for the effect to work
+<div id="bgContainer" class="bgContainer">
+    <canvas id="bgCanvas">
+        error: your browser does not support the canvas element
+    </canvas>
+</div>
+*/
+
 var bgColor1 = '#2b2b2b'
 var bgColor2 = '#1a1a1a'
 

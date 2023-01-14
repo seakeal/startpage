@@ -1,43 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="description" content="A startpage designed to fit my aesthetic and be friendly for evening use." />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
-    <link rel="stylesheet" type="text/css" href="style-grid.css" />
-    <title>Seakeal</title>
-    <script type="text/javascript" src="src/clock.js"></script>
-    <script type="text/javascript" src="src/background.js"></script>
-    <script type="text/javascript" src="src/rss.js"></script>
-</head>
-<body>
-    <div id="mainContainer" class="mainContainer">
-        <div id="mainBar" class="content">
+
+    <?php include_once("api/boilerplate/head.php"); ?>
+
+    <body>
+        <div id="mainContainer" class="mainContainer">
             <div id="clock" class="clock">
                 error: clock function broken
             </div>
-            <!-- <div class="content" id="leftBar" style="width:89px; height:299px; background-image: url('img/skull_left2.png');"></div> -->
-            <div id="welcomeMsg" class="welcomeMsg">
+            <!-- <div id="welcomeMsg" class="welcomeMsg">
                 <p>Welcome Seakeal</p>
-            </div>
-            <div id="bookmarks" class="bookmarks">
-                <ul class="bookmarksList">
-                    <li><a href="https://github.com/seakeal" class="clink" target="_blank">GitHub</a></li>
-                    <li><a href="https://docs.google.com/spreadsheets/d/1LZ1Ei7oE2Wggxtu5299ftUHgQdg1J6st1ImZrHeyEXk/edit#gid=718441427" class="clink" target="_blank">League</a></li>
-                    <li><a href="https://mail.google.com/mail/u/0" class="clink" target="_blank">Mail</a></li>
-                    <li><a href="https://open.spotify.com/" class="clink" target="_blank">Spotify</a></li>
-                    <li><a href="https://www.youtube.com/feed/subscriptions" class="clink" target="_blank">YouTube</a></li>
-                </ul>
-            </div>
-            <!-- <div class="content" id="rightBar" style="width:89px; height:299px; background-image: url('img/skull_right2.png');"></div> -->
+            </div> -->
+            <?php include_once("api/boilerplate/bookmarks.php"); ?>
+            <!-- <div>
+                <a href="meme_archive.php">Meme Archive</a>
+            </div> -->
+            <div id="background"></div>
         </div>
-    </div>
-    <div id="bgContainer" class="bgContainer">
-        <canvas id="bgCanvas">
-            error: your browser does not support the canvas element
-        </canvas>
-    </div>
-</body>
+    </body>
+
 </html>
