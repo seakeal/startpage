@@ -21,7 +21,7 @@
 * {
     color: var(--text-color);
     font-family: JosefinSans;
-    font-size: 30px;
+    font-size: clamp(8px, 2vw, 30px);
     margin: 0;
     padding: 0;
 }
@@ -97,10 +97,10 @@ ul {
 } */
 
 #bookmarks a {
-    border-radius: 10px;
+    border-radius: clamp(2px, 1vw, 10px);
     display: block;
     margin-left: 20%;
-    padding: 15px;
+    padding: clamp(2px, 1vw, 15px);
     width: 50%;
     
 }
