@@ -3,7 +3,7 @@
 function buildScriptTags($scripts) {
     $htmlString = '';
     foreach($scripts as $name => $src) {
-        $htmlString .= "<script type=\"text/javascript\" src=\"{$src}\"></script>";
+        $htmlString .= "<script src=\"{$src}\"></script>";
     }
     return $htmlString;
 }
@@ -23,10 +23,10 @@ $title          = 'Startpage';
 
 echo "<head>
     <meta charset=\"utf-8\" />
-    <meta name=\"description\" content=\"{$description}\" />
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
-    <link rel=\"manifest\" href=\"%PUBLIC_URL%/manifest.json\" />
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"{$style}\" />
+    <meta name=\"description\" content=\"{$description}\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+    <!-- <link rel=\"manifest\" href=\"%PUBLIC_URL%/manifest.json\"> -->
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"{$style}\">
     <link rel=\"icon\" type=\"image/x-icon\" href=\"{$favicon}\">
     <title>{$title}</title>".
     buildScriptTags($scripts)

@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 });
 
 function updateClock() {
-    var t = new Date();
+    let t = new Date();
     // var dateString = DAYS[t.getDay()]+' ' +
     //     ('0'+(t.getMonth()+1)).slice(-2)+'.' +
     //     ('0'+t.getDate()).slice(-2)+'.' +
@@ -16,7 +16,7 @@ function updateClock() {
     //     ('0'+t.getHours()).slice(-2)+':'+
     //     ('0'+t.getMinutes()).slice(-2)+':'+
     //     ('0'+t.getSeconds()).slice(-2);
-    var dateString = '<div id="clockDate" class="time">'+
+    let dateString = '<div id="clockDate" class="time">'+
     DAYS[t.getDay()]+', '+
     MONTHS[t.getMonth()] + ' '+
     ('0'+t.getDate()).slice(-2)+' ' +

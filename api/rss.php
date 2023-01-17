@@ -185,7 +185,7 @@ function rss() {
         {
             author: Author of content,
             date: Date content was published,
-            description: Content description,
+            desc: Content description,
             image: Thumbnail for content,
             link: Link to content,
             site: Link to site,
@@ -198,5 +198,8 @@ function rss() {
 
 // #*#*#* Entry point *#*#*#
 rss();
+
+// TODO: Store entries in the database and pull those if there is nothing new
+// TODO: Run each feed in parallel and sort the completed array
 
 ?>

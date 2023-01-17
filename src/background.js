@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 });
 
 function animateBackground(x,y,c1,c2) {
+    // TODO: This may be a memory leak, try without redeclaring
     var canvas = document.getElementById('bgCanvas');
     canvas.width=window.innerWidth;
     canvas.height=window.innerHeight;
