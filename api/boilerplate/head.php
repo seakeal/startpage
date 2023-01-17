@@ -11,7 +11,8 @@ function buildScriptTags($scripts) {
 $scripts = array(
     // 'Background'    => 'src/background.js',
     'Clock'         => 'src/clock.js',
-    'RSS'           => 'src/rss.js'
+    'Memes'         => 'src/memes.js',
+    'RSS'           => 'src/rss.js',
 );
 
 $description    = 'A startpage designed to fit my aesthetic and be friendly for evening use.';

@@ -1,9 +1,13 @@
 document.addEventListener('DOMContentLoaded', function(event) {
     console.log('RSS function loaded');
-    updateRSS();
+    document.getElementById('RSS-link').onclick = () => {
+        getRSS();
+        return false; // Prevents the link from opening
+    };
 });
 
-function updateRSS() {
+function getRSS() {
+    console.log('Getting RSS feed...');
     // document.getElementById('rssContainer').innerHTML='<p>Loading RSS feeds...</p>';
     fetch('api/rss.php')
     .then((response) => response.json())

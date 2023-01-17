@@ -48,11 +48,12 @@ ul {
 
 .mainContainer {
     height: 100%;
-    display: grid;
-    grid-template-columns: 20% 45% 1fr;
-    grid-template-rows: 10% 10% 1fr;
     position: fixed;
     width: 100%;
+
+    display: grid;
+    grid-template-columns: min(8%, 120px) 40% 1fr;
+    grid-template-rows: 10% 10% 1fr;
 }
 
 /* ## Components ## */
@@ -63,10 +64,12 @@ ul {
     background-image: var(--bg-image);
     background-repeat: no-repeat;
     background-size: cover;
+
     grid-column-start: 2;
     grid-column-end: -1;
     grid-row-start: 1;
     grid-row-end: -1;
+
     z-index: -1;
 }
 
@@ -76,19 +79,29 @@ ul {
 
 #bookmarks {
     /* background-color: var(--main-color); */
+    border-right: 5px ridge var(--secd-color); 
+    height: 100%;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+
     background-image: var(--bg-repeat);
     background-repeat: no-repeat;
     background-size: cover;
-    border-right: 5px ridge var(--secd-color); 
+
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
-    grid-row-end: 4;
-    height: 100%;
-    text-align: center;
+    grid-row-end: 4;    
 }
 
 #bookmarks ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
     margin-top: 50%;
 }
 
@@ -99,15 +112,19 @@ ul {
 #bookmarks a {
     border-radius: clamp(2px, 1vw, 10px);
     display: block;
-    margin-left: 20%;
-    padding: clamp(2px, 1vw, 15px);
-    width: 50%;
+    /* margin-left: clamp(10px, 15%, 50px); */
+    padding-top: clamp(2px, 1vw, 15px);
+    /* width: 50%; */
     
 }
-
+/* 
 #bookmarks a:hover {
     background-color: var(--tert-color);
     display: block;
+} */
+
+#bookmarks img {
+    height: clamp(32px, 3vw, 80px);
 }
 
 /* End Bookmarks */
