@@ -4,7 +4,6 @@ This is what my page looks like.
 ![Image not found](img/example.png)
 
 Wizard drawn by Richey Beckett
-
 TODO LIST:
 - api/rss.php
 	- Full name or figure out namespace & CDATA
@@ -17,6 +16,9 @@ TODO LIST:
 	- Implement a better random query https://mariadb.com/kb/en/data-sampling-techniques-for-efficiently-finding-a-random-row/
 - src/background.js
 	- This may be a memory leak, try without redeclaring
+- src/contentBox.js
+	- Think about moving this to style.css
+	- Figure out a good way to open and close the box
 - src/rss.js
 	- Remove
 	- Remove

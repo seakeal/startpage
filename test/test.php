@@ -4,6 +4,10 @@
 ?>
 <!DOCTYPE html>
 <html>
-    <head></head>
-    <body></body>
+    <head>
+        <script src="../src/contentBox.js"></script>
+    </head>
+    <body>
+        <div id="contentBox"></div>
+    </body>
 </html>
