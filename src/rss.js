@@ -10,21 +10,29 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 function buildRSSBox(jsonRSS) {
     let author      = jsonRSS.author;
-    let date        = jsonRSS.date;
-    let desc        = jsonRSS.description;
+    let desc        = jsonRSS.desc;
     let image       = jsonRSS.image;
     let link        = jsonRSS.link;
-    let site        = jsonRSS.site;
+    // let site        = jsonRSS.site; unused → icon maybe???
     let source      = jsonRSS.source;
     let title       = jsonRSS.title;
+    
+    // Date formatting
+    let dateArr = jsonRSS.date.split(' ');
+    let date = `${MONTHS[parseInt(dateArr[1])]} ${dateArr[2]} ${dateArr[0]} ${dateArr[3]}:${dateArr[4]}`;
+    
     let rssBox = `
         <div id="${source}${countRSS}" class="rssBox">
-            <h1>${title}</h1>
-            <a href="${link}" target="_blank"><img src="${image}" alt="Image not available"></a>
-            <p>${date} - ${author}</p>
-            <p id="description" onclick="showDesc()">${desc}</p>
+            <img class="rssImg" src="${image}" alt="Image not available">    
+            <a class="rssTitle" href="${link}" target="_blank"><h1>${title}</h1></a>
+            <div class="rssDateAuthor">
+                <h3 class="rssAuthor">${author}</h3>
+                <h3 class="rssDate">${date}</h3>
+            </div>
+            <!-- <p class="rssDesc" onclick="showDesc()">${desc}</p> -->
         </div>
         `;
+    document.getElementById('rssFeed').style.border="#a6363a 2px solid";
     return rssBox;
 }
 
@@ -37,11 +45,11 @@ async function getRSS() {
     .then((feed) => {
         console.log(feed); // TODO: Remove
         let htmlString = '';
-        feed.array.forEach(e => {
+        feed.forEach(e => {
             countRSS++;
             htmlString += buildRSSBox(e);
         });
-        document.getElementById('contentBox').innerHTML = htmlString;
+        document.getElementById('rssFeed').innerHTML = htmlString;
     });
 }
 

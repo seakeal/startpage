@@ -1,0 +1,87 @@
+/* ## Variables ## */
+:root {
+    /* --main-color: #242424;  */
+    --main-color: #b8a692;
+    --secd-color: #a6363a;
+    --tert-color: #6d7665;
+    --text-color: #000;
+}
+
+/* ## Fonts ## */
+
+@font-face {
+    font-family: "JosefinSans";
+    src: url('fonts/JosefinSans/JosefinSans-VariableFont_wght.ttf');
+}
+
+/* ## Global ## */
+
+* {
+    color: var(--text-color);
+    font-family: JosefinSans;
+    font-size: clamp(8px, 2vw, 30px);
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--main-color);
+}
+
+/* ## Bookmarks ## */
+
+.bookmarks {
+    display: grid;
+    width: 300px;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-gap: 10px; */
+}
+
+.bookmarkItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bookmarks img {
+    height: clamp(32px, 3vw, 80px);
+}
+
+/* ## RSS ## */
+
+#rssFeed {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
+
+.rssBox {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 25% 1fr;
+    grid-template-rows: 30% 80% 1fr;
+    width: 80%;
+    padding-left: 10%;
+    /* height: 40px; */
+    /* border: #000 2px solid; */
+}
+
+.rssImg {
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: span 4;
+}
+
+.rssBox img {
+    height: 100%;
+    width: 100%;
+}
+
+.rssTitle {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.rssDateAuthor {
+    grid-column: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}

@@ -15,6 +15,7 @@
             <!-- <div>
                 <a href="meme_archive.php">Meme Archive</a>
             </div> -->
+            <div id="rssFeed"></div>
             <div id="contentBox"></div>
             <div id="background"></div>
         </div>
