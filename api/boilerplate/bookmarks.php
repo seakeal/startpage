@@ -20,7 +20,7 @@ function buildFlexBookmarks($bookmarks) {
 }
 
 // Begin
-$iconPath = 'img/color_icons';
+$iconPath = 'img/icons';
 
 $bookmarks = array(
     'GitHub'    => array(
