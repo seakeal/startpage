@@ -26,8 +26,8 @@ function buildRSSBox(jsonRSS) {
             <img class="rssImg" src="${image}" alt="Image not available">    
             <a class="rssTitle" href="${link}" target="_blank"><h1>${title}</h1></a>
             <div class="rssDateAuthor">
-                <h3 class="rssAuthor">${author}</h3>
-                <h3 class="rssDate">${date}</h3>
+                <p class="rssAuthor">${author}</p>
+                <p class="rssDate">${date}</p>
             </div>
             <!-- <p class="rssDesc" onclick="showDesc()">${desc}</p> -->
         </div>

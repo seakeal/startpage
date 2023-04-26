@@ -2,9 +2,11 @@
 :root {
     --main-color: #242424; 
     /* --main-color: #b8a692; */
-    --secd-color: #a6363a;
+    --secd-color: #ed5000;
+    /* --secd-color: #a6363a; */
     --tert-color: #6d7665;
-    --text-color: #000;
+    --text-color: #ed5000;
+    /* --text-color: #000; */
 }
 
 /* ## Fonts ## */
@@ -19,11 +21,28 @@
 * {
     color: var(--text-color);
     font-family: JosefinSans;
-    font-size: clamp(8px, 2vw, 30px);
+    font-size: clamp(10px, 2vw, 32px);
     margin: 0;
     padding: 0;
 
     background-color: var(--main-color);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ## Main ## */
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    padding: 0px;
+    width: clamp(300px, 100%, 800px);
+    gap: 30px;
 }
 
 /* ## Bookmarks ## */
@@ -45,12 +64,34 @@
     height: clamp(32px, 3vw, 80px);
 }
 
+/* ## Clock ## */
+.clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--secd-color);
+}
+
+@keyframes colorFade {
+    0% { color: #cfcfcf; }
+    100% { color: var(--text-color); }
+}
+
+.colorFade {
+    animation-name: colorFade;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
 /* ## RSS ## */
 
 #rssFeed {
     display: flex;
     flex-direction: column;
-    width: 600px;
+    /* width: 600px; */
+    width: clamp(120px, 90%, 600px);
+    margin-left: clamp(5px, 5%, 5%);
+    margin-right: clamp(5px, 5%, 5%);
 }
 
 .rssBox {
@@ -81,6 +122,8 @@
 }
 
 .rssDateAuthor {
+    display: flex;
+    flex-direction: vertical;
     grid-column: 2;
     grid-row-start: 2;
     grid-row-end: 3;
