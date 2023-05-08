@@ -17,6 +17,12 @@
     $obj = new testImg();
     $obj->filename = "starsector-domain.webp";
     $obj->meme_name = "Test";
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        foreach($_POST as $key => $value) {
+            // Insert into tags table
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +52,7 @@
             <img src="../img/rss/<?php echo $obj->filename; ?>" alt="Image not found" name="memeImage" id="memeImage">
         </div>
         <button id="addTagBox" onclick="addTagBox()">+ Add Tag</button>
-        <form action="" method="post" id="memeAddTags">
+        <form action="self" method="post" id="memeAddTags">
             <div id="tagList">
                 <input type="text" name="newTag0" id="newTag0" class="memeTag">
             </div>
