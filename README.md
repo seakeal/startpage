@@ -11,8 +11,11 @@ TODO LIST:
 	- Pull these from the database
 	- Mess with this → create an issue or something
 	- Run each feed in parallel and sort the completed array
-- pages/meme_archive.php
+- pages/archive.php
 	- Implement a better random query https://mariadb.com/kb/en/data-sampling-techniques-for-efficiently-finding-a-random-row/
+	- Uncomment, only commented out for offline testing
+	- Implement check for image vs video
+	- Get meme ID from URL and add a landing page
 - src/background.js
 	- This may be a memory leak, try without redeclaring
 - src/contentBox.js

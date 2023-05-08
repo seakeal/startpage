@@ -83,6 +83,43 @@ body {
     animation-fill-mode: forwards;
 }
 
+/* ## Meme Archive ## */
+
+.memeNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 2px solid var(--secd-color);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.memeNavBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--tert-color);
+    border: 2px solid var(--secd-color);
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    padding: 2px;
+}
+
+#memeAddTags {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#tagList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 /* ## RSS ## */
 
 #rssFeed {

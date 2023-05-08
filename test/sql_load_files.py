@@ -1,3 +1,4 @@
+# TODO: Add column for media type and check for image and video extensions
 import os
 
 dir_path = ''
