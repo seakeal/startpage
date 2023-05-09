@@ -20,7 +20,17 @@
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         foreach($_POST as $key => $value) {
+            // Sanitize input
+
             // Insert into tags table
+            // $sql = "IF NOT EXISTS (
+            //     SELECT ID FROM tags t
+            //     WHERE t.tagName=$value
+            // )
+            // BEGIN 
+            //     INSERT INTO tags ($id, $value, 1)
+            // END";
+            // $result = $mysqli->query($sql);
         }
     }
 ?>
@@ -52,7 +62,7 @@
             <img src="../img/rss/<?php echo $obj->filename; ?>" alt="Image not found" name="memeImage" id="memeImage">
         </div>
         <button id="addTagBox" onclick="addTagBox()">+ Add Tag</button>
-        <form action="self" method="post" id="memeAddTags">
+        <form action="http://localhost/upgrade-to-server/pages/archive.php" method="post" id="memeAddTags">
             <div id="tagList">
                 <input type="text" name="newTag0" id="newTag0" class="memeTag">
             </div>

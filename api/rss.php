@@ -91,6 +91,30 @@ function rssStarsector($rss) : array {
    
 }
 
+function rssUltiworld($rss) : array {
+    // Globals
+    global $DATEFORMAT;
+    // Namespaces
+    $rss->registerXPathNamespace('dc','http://purl.org/dc/elements/1.1/'); // Gets article author (not working)
+
+    // Implemented to find only first article
+    $article = $rss->channel->item[0];
+
+    $author = $rss->xpath('//dc:creator')[0];
+    $date = DateTimeImmutable::createFromFormat('D, d M Y H:i:s', substr($article->pubDate,0,25))->format($DATEFORMAT);
+    $desc = $article->description;
+    $image = $rss->channel->image->url;
+    $link = $article->link;
+    $site = $rss->channel->link;
+    $source = 'Ultiworld';
+    $title = $article->title;
+
+    $feed = array();
+    buildReturnArray($feed, $author, $date, $desc, $image, $link, $site, $source, $title);
+
+    return $feed;
+}
+
 function rssYouTube($rss) : array {
     // **** Code to find YouTube creator ID ****
     // **** Inspect YT channel page and paste into JS console ****
@@ -161,6 +185,10 @@ function rss() {
             'source' => 'YouTube',
             'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UC2VARtDSExy9pY4WvTJKo1g',
         ),
+        'Ultiworld' => array(
+            'source' => 'Ultiworld',
+            'url'    => 'https://ultiworld.com/feed/'
+        ),
     );
     $feed = array();
     foreach($rssFeeds as $title => $details) {
@@ -174,6 +202,9 @@ function rss() {
                 break;
             case 'YouTube':
                 $feed = array_merge($feed, rssYouTube($rss));
+                break;
+            case 'Ultiworld':
+                $feed = array_merge($feed, rssUltiworld($rss));
                 break;
             default:    // TODO: Mess with this → create an issue or something
                 break;
