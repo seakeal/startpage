@@ -70,9 +70,9 @@ $bookmarks = array(
     // ),
 );
 
-// echo "<div id=\"bookmarks\" class=\"bookmarks\">".
-//     buildBookmarks($bookmarks).
-// "</div>"
+echo "<div id=\"bookmarks\" class=\"bookmarks\">".
+    buildBookmarks($bookmarks).
+"</div>";
 
 class Bookmarks {
     // Properties
