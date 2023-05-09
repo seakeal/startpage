@@ -11,7 +11,7 @@
             <!-- <div id="welcomeMsg" class="welcomeMsg">
                 <p>Welcome Seakeal</p>
             </div> -->
-            <?php include_once("api/boilerplate/bookmarks.php"); ?>
+            <?php include_once("api/bookmarks.php"); ?>
             <!-- <div>
                 <a href="meme_archive.php">Meme Archive</a>
             </div> -->

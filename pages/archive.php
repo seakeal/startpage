@@ -18,21 +18,30 @@
     $obj->filename = "starsector-domain.webp";
     $obj->meme_name = "Test";
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        foreach($_POST as $key => $value) {
-            // Sanitize input
-
-            // Insert into tags table
-            // $sql = "IF NOT EXISTS (
-            //     SELECT ID FROM tags t
-            //     WHERE t.tagName=$value
-            // )
-            // BEGIN 
-            //     INSERT INTO tags ($id, $value, 1)
-            // END";
-            // $result = $mysqli->query($sql);
-        }
+    switch($_SERVER['REQUEST_METHOD']) {
+        case 'POST':
+            foreach($_POST as $key => $value) {
+                // Sanitize input
+    
+                // Insert into tags table
+                // $sql = "IF NOT EXISTS (
+                //     SELECT ID FROM tags t
+                //     WHERE t.tagName=$value
+                // )
+                // BEGIN 
+                //     INSERT INTO tags ($id, $value, 1)
+                // END";
+                // $result = $mysqli->query($sql);
+            }
+        case 'GET':
+            // Load image from DB w/$_GET['memeId']
+            break;
+        default:
+            // header( {archive landing page} )
+            break;
+        
     }
+
 ?>
 
 <!DOCTYPE html>
