@@ -70,24 +70,49 @@ function rssStarsector($rss) : array {
 
     $feed = array();
 
-    for($i = 0; $i < 3; $i++) {
-        // Each article is an item in the channel
-        $article = $rss->channel->item[$i];
+    // for($i = 0; $i < 3; $i++) { // Uncomment for multiple articles
+    $i = 0;
+    // Each article is an item in the channel
+    $article = $rss->channel->item[$i]; // Uncomment for multiple articles
 
-        $author = 'Alex'; // TODO: Full name or figure out namespace & CDATA
-        $date = DateTimeImmutable::createFromFormat('D, d M Y H:i:s', substr($article->pubDate,0,25))->format($DATEFORMAT);
-        $desc = substr($article->description,0,-10).'&#8230;'; // Replaces ellipses
-        $image = ""; // TODO: Starsector Logo
-        $link = $article->link;
-        $site = 'https://fractalsoftworks.com/';
-        $source = 'Starsector';
-        $title = $article->title;
+    $author = 'Alexander Mosolov';
+    $date = DateTimeImmutable::createFromFormat('D, d M Y H:i:s', substr($article->pubDate,0,25))->format($DATEFORMAT);
+    $desc = substr($article->description,0,-10).'&#8230;'; // Replaces ellipses
+    $image = 'img/rss/starsector-domain.webp';
+    $link = $article->link;
+    $site = 'https://fractalsoftworks.com/';
+    $source = 'Starsector';
+    $title = $article->title;
 
-        buildReturnArray($feed, $author, $date, $desc, $image, $link, $site, $source, $title);
-    }
+    buildReturnArray($feed, $author, $date, $desc, $image, $link, $site, $source, $title);
+    // } // Uncomment for multiple articles
 
     return $feed;
    
+}
+
+function rssUltiworld($rss) : array {
+    // Globals
+    global $DATEFORMAT;
+    // Namespaces
+    $rss->registerXPathNamespace('dc','http://purl.org/dc/elements/1.1/'); // Gets article author (not working)
+
+    // Implemented to find only first article
+    $article = $rss->channel->item[0];
+
+    $author = $rss->xpath('//dc:creator')[0];
+    $date = DateTimeImmutable::createFromFormat('D, d M Y H:i:s', substr($article->pubDate,0,25))->format($DATEFORMAT);
+    $desc = $article->description;
+    $image = $rss->channel->image->url;
+    $link = $article->link;
+    $site = $rss->channel->link;
+    $source = 'Ultiworld';
+    $title = $article->title;
+
+    $feed = array();
+    buildReturnArray($feed, $author, $date, $desc, $image, $link, $site, $source, $title);
+
+    return $feed;
 }
 
 function rssYouTube($rss) : array {
@@ -119,25 +144,27 @@ function rssYouTube($rss) : array {
     // Cast as string or becomes SimpleXML object
     $feed = array();
 
-    for($i = 0; $i < 3; $i++) {
-        // Each video is an entry
-        $entry  = $rss->entry[$i];
-        
-        /* Namespaces used here. When using xpath, it gets every
-        instance of the element in the namespace. This means we don't
-        have to link it to the entry, but instead can simply use the
-        for-loop counter to get the matching content. */
-        $author = $entry->author->name;
-        $date = DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s',substr($entry->published,0,19))->format($DATEFORMAT);
-        $desc =  $rss->xpath('//media:description')[$i];
-        $image = $rss->xpath('//media:thumbnail')[$i]['url'];
-        $link = $entry->link['href'];
-        $site = 'https://www.youtube.com/';
-        $source = 'YouTube';
-        $title = $entry->title;
+    // for($i = 0; $i < 3; $i++) { // Uncomment for multiple videos
+    $i = 0;
+    // Each video is an entry
+    $entry  = $rss->entry[$i];
 
-        buildReturnArray($feed, $author, $date, $desc, $image, $link, $site, $source, $title);
-    }
+    
+    /* Namespaces used here. When using xpath, it gets every
+    instance of the element in the namespace. This means we don't
+    have to link it to the entry, but instead can simply use the
+    for-loop counter to get the matching content. */
+    $author = $entry->author->name;
+    $date = DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s',substr($entry->published,0,19))->format($DATEFORMAT);
+    $desc =  $rss->xpath('//media:description')[$i];
+    $image = $rss->xpath('//media:thumbnail')[$i]['url'];
+    $link = $entry->link['href'];
+    $site = 'https://www.youtube.com/';
+    $source = 'YouTube';
+    $title = $entry->title;
+
+    buildReturnArray($feed, $author, $date, $desc, $image, $link, $site, $source, $title);
+    // }// Uncomment for multiple videos
 
     return $feed;
 }
@@ -158,6 +185,10 @@ function rss() {
             'source' => 'YouTube',
             'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UC2VARtDSExy9pY4WvTJKo1g',
         ),
+        'Ultiworld' => array(
+            'source' => 'Ultiworld',
+            'url'    => 'https://ultiworld.com/feed/'
+        ),
     );
     $feed = array();
     foreach($rssFeeds as $title => $details) {
@@ -172,7 +203,24 @@ function rss() {
             case 'YouTube':
                 $feed = array_merge($feed, rssYouTube($rss));
                 break;
+            case 'Ultiworld':
+                $feed = array_merge($feed, rssUltiworld($rss));
+                break;
             default:    // TODO: Mess with this → create an issue or something
+                break;
+                // function buildReturnArray(&$array, $author, $date, $desc, $image, $link, $site, $source, $title)
+                // $feed = array_merge($feed,
+                //     array(
+                //         'author'    => (string) 'Seakeal',
+                //         'date'      => (string) $date,
+                //         'desc'      => (string) $desc,
+                //         'image'     => (string) $image,
+                //         'link'      => (string) $link,
+                //         'site'      => (string) $site,
+                //         'source'    => (string) $source,
+                //         'title'     => (string) $title,
+                //     )
+                // );
                 //$feed[$from] = array("date"=>new DateTimeImmutable('1/1/1900'), "htmlString"=>"Create a case for ".$feed);
         }
     }
@@ -185,7 +233,7 @@ function rss() {
         {
             author: Author of content,
             date: Date content was published,
-            description: Content description,
+            desc: Content description,
             image: Thumbnail for content,
             link: Link to content,
             site: Link to site,
@@ -198,5 +246,8 @@ function rss() {
 
 // #*#*#* Entry point *#*#*#
 rss();
+
+// TODO: Run each feed in parallel and sort the completed array
+// TODO: Upgrade into module
 
 ?>

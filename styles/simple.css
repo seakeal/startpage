@@ -1,0 +1,167 @@
+/* ## Variables ## */
+:root {
+    --main-color: #242424; 
+    /* --main-color: #b8a692; */
+    --secd-color: #ed5000;
+    /* --secd-color: #a6363a; */
+    --tert-color: #6d7665;
+    --text-color: #ed5000;
+    /* --text-color: #000; */
+}
+
+/* ## Fonts ## */
+
+@font-face {
+    font-family: "JosefinSans";
+    src: url('fonts/JosefinSans/JosefinSans-VariableFont_wght.ttf');
+}
+
+/* ## Global ## */
+
+* {
+    color: var(--text-color);
+    font-family: JosefinSans;
+    font-size: clamp(10px, 2vw, 32px);
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--main-color);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ## Main ## */
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    padding: 0px;
+    width: clamp(300px, 100%, 800px);
+    gap: 30px;
+}
+
+/* ## Bookmarks ## */
+
+.bookmarks {
+    display: grid;
+    width: 300px;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-gap: 10px; */
+}
+
+.bookmarkItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bookmarks img {
+    height: clamp(32px, 3vw, 80px);
+}
+
+/* ## Clock ## */
+.clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--secd-color);
+}
+
+@keyframes colorFade {
+    0% { color: #cfcfcf; }
+    100% { color: var(--text-color); }
+}
+
+.colorFade {
+    animation-name: colorFade;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+/* ## Meme Archive ## */
+
+.memeNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 2px solid var(--secd-color);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.memeNavBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--tert-color);
+    border: 2px solid var(--secd-color);
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    padding: 2px;
+}
+
+#memeAddTags {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#tagList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ## RSS ## */
+
+#rssFeed {
+    display: flex;
+    flex-direction: column;
+    /* width: 600px; */
+    width: clamp(120px, 90%, 600px);
+    margin-left: clamp(5px, 5%, 5%);
+    margin-right: clamp(5px, 5%, 5%);
+}
+
+.rssBox {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 25% 1fr;
+    grid-template-rows: 30% 80% 1fr;
+    width: 80%;
+    padding-left: 10%;
+    /* height: 40px; */
+    /* border: #000 2px solid; */
+}
+
+.rssImg {
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: span 4;
+}
+
+.rssBox img {
+    height: 100%;
+    width: 100%;
+}
+
+.rssTitle {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.rssDateAuthor {
+    display: flex;
+    flex-direction: vertical;
+    grid-column: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
