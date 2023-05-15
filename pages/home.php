@@ -1,14 +1,14 @@
 <?php
 
-include('../api/boilerplate/head.php');
+include('api/boilerplate/head.php');
 $head = new Head(
     'Home',
     'A startpage designed to fit my aesthetic and be friendly for evening use.'
 );
 
 $modules = array(
-    '../api/clock.php' => 'Clock',
-    '../api/bookmarks.php' => 'Bookmarks',
+    'api/clock.php' => 'Clock',
+    'api/bookmarks.php' => 'Bookmarks',
 );
 
 foreach($modules as $m => $class) {

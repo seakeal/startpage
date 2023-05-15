@@ -248,5 +248,6 @@ function rss() {
 rss();
 
 // TODO: Run each feed in parallel and sort the completed array
+// TODO: Upgrade into module
 
 ?>

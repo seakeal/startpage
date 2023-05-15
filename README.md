@@ -5,12 +5,11 @@ This is what my page looks like.
 
 Wizard drawn by Richey Beckett
 TODO LIST:
-- api/boilerplate/bookmarks.php
-	- Consider removing buildFlexBookmarks from code
 - api/rss.php
 	- Pull these from the database
 	- Mess with this → create an issue or something
 	- Run each feed in parallel and sort the completed array
+	- Upgrade into module
 - pages/archive.php
 	- Implement a better random query https://mariadb.com/kb/en/data-sampling-techniques-for-efficiently-finding-a-random-row/
 	- Uncomment, only commented out for offline testing

@@ -22,16 +22,16 @@ $style          = 'styles/simple.css';
 $title          = 'Startpage';
 
 
-echo "<head>
-    <meta charset=\"utf-8\" />
-    <meta name=\"description\" content=\"{$description}\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-    <!-- <link rel=\"manifest\" href=\"%PUBLIC_URL%/manifest.json\"> -->
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"{$style}\">
-    <link rel=\"icon\" type=\"image/x-icon\" href=\"{$favicon}\">
-    <title>{$title}</title>".
-    buildScriptTags($scripts)
-."</head>";
+// echo "<head>
+//     <meta charset=\"utf-8\" />
+//     <meta name=\"description\" content=\"{$description}\">
+//     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+//     <!-- <link rel=\"manifest\" href=\"%PUBLIC_URL%/manifest.json\"> -->
+//     <link rel=\"stylesheet\" type=\"text/css\" href=\"{$style}\">
+//     <link rel=\"icon\" type=\"image/x-icon\" href=\"{$favicon}\">
+//     <title>{$title}</title>".
+//     buildScriptTags($scripts)
+// ."</head>";
 
 
 class Head {
@@ -43,7 +43,7 @@ class Head {
     private $scripts = array();
 
     // Methods
-    function __construct($title, $desc, $style='../styles/simple.css', $favicon='../img/favicon.ico') {
+    function __construct($title, $desc, $style='styles/simple.css', $favicon='img/favicon.ico') {
         $this->title = $title;
         $this->description = $desc;
         $this->style = $style;
@@ -72,7 +72,7 @@ class Head {
     private function buildScriptTags($scripts) {
         $htmlString = '';
         foreach($scripts as $name => $src) {
-            $htmlString .= "<script src=\"../$src\"></script>";
+            $htmlString .= "<script src=\"$src\"></script>";
         }
         return $htmlString;
     } 

@@ -53,6 +53,8 @@ $ignore = array(
     'updateTodo.php',
     'fonts',
     'img',
+    'convertme.txt',
+    'out.sql',
 );
 $files = array();
 getFiles($files, $ignore, '..');
@@ -83,5 +85,8 @@ $file = fopen($readmePath, 'w');
 fwrite($file, $readme);
 fclose($file);
 
+echo 'TODO updated at '.date('h:i:s d/m/Y', time());
+
+// TODO: Create button that runs page
 
 ?>

@@ -1,0 +1,15 @@
+<?php
+
+$html = '<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p>test</p>
+    </body>
+</html>';
+
+echo $html;
+
+?>
