@@ -52,9 +52,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
-    <link rel="stylesheet" type="text/css" href="../styles/simple.css" />
+    <link rel="stylesheet" type="text/css" href="styles/simple.css" />
     <title>Archive</title>
-    <script type="text/javascript" src="../src/memes.js"></script>
+    <script type="text/javascript" src="src/memes.js"></script>
     
 </head>
 <body>
