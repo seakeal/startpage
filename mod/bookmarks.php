@@ -1,5 +1,8 @@
 <?php
 
+// TODO: Add buttons that lead to other pages in site
+// TODO: Add button that updates the TODO list (hide in production)
+
 class Bookmarks {
     // Properties
     public $scripts = array(

@@ -142,6 +142,9 @@ body {
 
 /* ## RSS ## */
 
+/* // TODO: Make RSS box size dynamically like other UI elements
+*/
+
 #rssFeed {
     display: flex;
     flex-direction: column;

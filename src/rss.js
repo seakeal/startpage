@@ -42,12 +42,11 @@ function buildRSSBox(jsonRSS) {
 
 async function getRSS() {
     console.log('Getting RSS feed...');
-    // contentBoxOn(); TODO: Add JS for displaying the content box
     document.getElementById('rssFeed').innerHTML='<p>Loading RSS feed...</p>';
     fetch('api/rss.php')
     .then((response) => response.json())
     .then((feed) => {
-        console.log(feed); // TODO: Remove
+        console.log(feed); // TODO: Comment out console log
         let htmlString = '';
         feed.forEach(e => {
             countRSS++;
