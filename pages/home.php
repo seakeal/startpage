@@ -1,14 +1,16 @@
 <?php
 
-include('api/boilerplate/head.php');
+include('boilerplate/head.php');
 $head = new Head(
     'Home',
     'A startpage designed to fit my aesthetic and be friendly for evening use.'
 );
 
+// path-to-mod => class-name
 $modules = array(
-    'api/clock.php' => 'Clock',
-    'api/bookmarks.php' => 'Bookmarks',
+    'mod/clock.php' => 'Clock',
+    'mod/bookmarks.php' => 'Bookmarks',
+    'mod/rss.php' =>  'RSS',
 );
 
 foreach($modules as $m => $class) {
@@ -16,9 +18,6 @@ foreach($modules as $m => $class) {
     $mod = new $class;
     $head->addScripts($mod->scripts);
 }
-
-
-
 
 ?>
 
@@ -30,6 +29,7 @@ foreach($modules as $m => $class) {
             <?php
             $clock = new Clock; $clock->buildHtml();
             $bookmarks = new Bookmarks; $bookmarks->buildHtml();
+            $rss = new RSS; $rss->buildHtml();
             ?>
         </div>
     </body>

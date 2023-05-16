@@ -56,5 +56,5 @@ function updateClock() {
     prevMinutes = minutes;
     prevSeconds = seconds;
 
-    setTimeout(updateClock, 1000);
+    setTimeout(updateClock, 999);
 }

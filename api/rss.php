@@ -2,6 +2,7 @@
 
 // Glocal Constants
 $DATEFORMAT = 'Y m d h i s';
+$ICON_DIR = 'img/rss/';
 
 // ##############################################
 // ## Utility functions
@@ -29,19 +30,6 @@ function dateSort($a, $b) : int {
     return $a["date"] > $b["date"] ? -1 : 1;
 }
 
-// Builds an <a> tag string cleanly - not currently being used
-// function htmlLink($link, $text="", $class="", $id="") : string {
-//     $htmlString = '<a ';
-
-//     if ($class <> "")
-//         $htmlString .= 'class="'.$class.'" ';
-//     if ($id <> "")
-//         $htmlString .= 'id="'.$id.'" ';
-//     $htmlString .= 'href="'.$link.'" target="_blank">'.$text.'</a>';
-    
-//     return $htmlString;
-// }
-
 // ##############################################
 // ## RSS Functions
 // ##############################################
@@ -60,7 +48,7 @@ function getRss($feed) : string {
 
 function rssStarsector($rss) : array {
     // Globals
-    global $DATEFORMAT;
+    global $DATEFORMAT, $ICON_DIR;
     $source = "Starsector";
     $link = "https://fractalsoftworks.com/";
     $dateLength = 16;
@@ -78,7 +66,7 @@ function rssStarsector($rss) : array {
     $author = 'Alexander Mosolov';
     $date = DateTimeImmutable::createFromFormat('D, d M Y H:i:s', substr($article->pubDate,0,25))->format($DATEFORMAT);
     $desc = substr($article->description,0,-10).'&#8230;'; // Replaces ellipses
-    $image = 'img/rss/starsector-domain.webp';
+    $image = $ICON_DIR.'starsector.png';
     $link = $article->link;
     $site = 'https://fractalsoftworks.com/';
     $source = 'Starsector';
@@ -93,7 +81,7 @@ function rssStarsector($rss) : array {
 
 function rssUltiworld($rss) : array {
     // Globals
-    global $DATEFORMAT;
+    global $DATEFORMAT, $ICON_DIR;
     // Namespaces
     $rss->registerXPathNamespace('dc','http://purl.org/dc/elements/1.1/'); // Gets article author (not working)
 
@@ -103,7 +91,7 @@ function rssUltiworld($rss) : array {
     $author = $rss->xpath('//dc:creator')[0];
     $date = DateTimeImmutable::createFromFormat('D, d M Y H:i:s', substr($article->pubDate,0,25))->format($DATEFORMAT);
     $desc = $article->description;
-    $image = $rss->channel->image->url;
+    $image = $ICON_DIR.'ultiworld.png';
     $link = $article->link;
     $site = $rss->channel->link;
     $source = 'Ultiworld';
@@ -115,7 +103,7 @@ function rssUltiworld($rss) : array {
     return $feed;
 }
 
-function rssYouTube($rss) : array {
+function rssYouTube($rss, $name) : array {
     // **** Code to find YouTube creator ID ****
     // **** Inspect YT channel page and paste into JS console ****
     /*
@@ -131,7 +119,7 @@ function rssYouTube($rss) : array {
     */
 
     // Globals
-    global $DATEFORMAT;
+    global $DATEFORMAT, $ICON_DIR;
 
     // Namespaces
     /* Needs to be registered to access namespace data in RSS feeds.
@@ -157,7 +145,8 @@ function rssYouTube($rss) : array {
     $author = $entry->author->name;
     $date = DateTimeImmutable::createFromFormat('Y-m-d\TH:i:s',substr($entry->published,0,19))->format($DATEFORMAT);
     $desc =  $rss->xpath('//media:description')[$i];
-    $image = $rss->xpath('//media:thumbnail')[$i]['url'];
+    // $image = $rss->xpath('//media:thumbnail')[$i]['url'];
+    $image = $ICON_DIR.$name.'.png';
     $link = $entry->link['href'];
     $site = 'https://www.youtube.com/';
     $source = 'YouTube';
@@ -174,24 +163,102 @@ function rssYouTube($rss) : array {
 // ##############################################
 function rss() {
     // Add RSS feeds here w/source name & url
-    // TODO: Pull these from the database
+    // TODO: Pull RSS sources from the database
     $rssFeeds = array(
+        'bill-wurtz' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCq6aw03lNILzV96UvEAASfQ',
+        ),
+        'CGP-Grey' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UC2C_jShtL725hvbm1arSV9w',
+        ),
+        'FUNKe' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCd-qVRcjoK9zjtDs_LRxSmw',
+        ),
+        'hyper' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCSezUnbvCLYBXuUlPcXU_QQ',
+        ),
+        'Jacob-Geller' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCeTfBygNb1TahcNpZyELO8g',
+        ),
+        'LazyPurple' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCdfj8hli-xBL93bfQvce88A',
+        ),
+        'Maple' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCcc1uP_6GbarYjoHcMMpBBQ',
+        ),
+        'Rhystic-Studies' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UC8e0Sg8TmRRFJytjEGhmVTg',
+        ),
+        'Seer' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCKbthQFolJxlUIYOa9bsKXg',
+        ),
+        'Sir-Swag' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCJy232tY_LUd1NuBgsSNUEA',
+        ),
+        'Sir-Swag-Academy' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCN6lBBO-sn2mRyjWRCz0Qtg',
+        ),
+        'Sirky' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCNsnWOqvrEAPHDcNOY_jw7A',
+        ),
+        'SsethTzeentach' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCD6VugMZKRhSyzWEWA9W2fg',
+        ),
         'Starsector' => array(
             'source' => 'Starsector',
             'url'    => 'https://fractalsoftworks.com/feed/',
         ),
-        //"Lofi Girl"     => "https://www.youtube.com/feeds/videos.xml?channel_id=UCSJ4gkVC6NrvII8umztf0Ow",
         'Spyfall' => array(
             'source' => 'YouTube',
             'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UC2VARtDSExy9pY4WvTJKo1g',
+        ),
+        'teamfortress' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UC5BTcArAnit9p5W7etFsPsA',
+        ),
+        'Terry-Cavanagh' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCniC5xZ_MedWwSDV9bPCxvg',
         ),
         'Ultiworld' => array(
             'source' => 'Ultiworld',
             'url'    => 'https://ultiworld.com/feed/'
         ),
+        'Uncle-Dane' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCu0PSyLD5p_J5osLk5UD0pw',
+        ),
+        'vewn' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCd0zIZlbgvEifm_hd3FwlBQ',
+        ),
+
+        // TODO: Add TF2 website RSS feed
+        // TODO: Add Terry Cavanagh's blog RSS feed
+        // TODO: Add Worthikids YouTube RSS feed
+
+        // Template
+        // 'name' => array(
+        //     'source' => '',
+        //     'url'    => '',
+        // ),
+
     );
     $feed = array();
-    foreach($rssFeeds as $title => $details) {
+    foreach($rssFeeds as $name => $details) {
         $source = $details['source'];
         $url    = $details['url'];
 
@@ -201,7 +268,7 @@ function rss() {
                 $feed = array_merge($feed, rssStarsector($rss));
                 break;
             case 'YouTube':
-                $feed = array_merge($feed, rssYouTube($rss));
+                $feed = array_merge($feed, rssYouTube($rss, $name));
                 break;
             case 'Ultiworld':
                 $feed = array_merge($feed, rssUltiworld($rss));
@@ -248,6 +315,5 @@ function rss() {
 rss();
 
 // TODO: Run each feed in parallel and sort the completed array
-// TODO: Upgrade into module
 
 ?>

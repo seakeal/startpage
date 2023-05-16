@@ -8,6 +8,8 @@ if (array_key_exists('page', $_GET)) {
         case 'home':
             include 'pages/home.php';
             break;
+        case 'archive':
+            include 'pages/archive.php';
         default:
             include 'pages/404.php';
             break;

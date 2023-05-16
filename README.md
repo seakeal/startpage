@@ -1,9 +1,8 @@
 # Seakeal's Startpage
 
 This is what my page looks like.
-![Image not found](img/example.png)
+![Image not found](img/new_example.png)
 
-Wizard drawn by Richey Beckett
 TODO LIST:
 - api/rss.php
 	- Pull these from the database
