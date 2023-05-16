@@ -55,9 +55,7 @@
     <link rel="stylesheet" type="text/css" href="../styles/simple.css" />
     <title>Archive</title>
     <script type="text/javascript" src="../src/memes.js"></script>
-    <!-- <script type="text/javascript" src="src/clock.js"></script> -->
-    <!-- <script type="text/javascript" src="src/background.js"></script> -->
-    <!-- <script type="text/javascript" src="src/rss.js"></script> -->
+    
 </head>
 <body>
     <div id="mainContainer" class="mainContainer">

@@ -10,6 +10,7 @@ if (array_key_exists('page', $_GET)) {
             break;
         case 'archive':
             include 'pages/archive.php';
+            break;
         default:
             include 'pages/404.php';
             break;
