@@ -6,7 +6,7 @@ class Bookmarks {
         //'src/rss.js',
     );
 
-    private $iconPath = 'img/icons';
+    private $iconPath = 'img/bookmark_icons'; // No trailing slash
     private $bookmarks = array(
         'GitHub'    => array(
             'Link'  => 'https://github.com/seakeal',
