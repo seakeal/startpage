@@ -40,13 +40,17 @@ class Bookmarks {
             'Link'  => 'https://groupme.com/en-US/',
             'Icon'  => "GroupMe.svg",
         ),
-        'Slack'      => array(
+        'Slack'     => array(
             'Link'  => 'https://slack.com/',
             'Icon'  => "Slack.svg",
         ),
-        'ChatGPT'      => array(
+        'ChatGPT'   => array(
             'Link'  => 'https://chat.openai.com/',
             'Icon'  => "OpenAI.svg",
+        ),
+        'Maps'      => array(
+            'Link'  => 'https://www.google.com/maps',
+            'Icon'  => "Maps.svg",
         ),
         // Template
         // 'Name'      => array(
