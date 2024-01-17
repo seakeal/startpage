@@ -1,5 +1,20 @@
 <?php
 
+// Scan for files
+$ignore = array(
+    '.',
+    '..',
+    'README.md',
+    '.git',
+    'paras.txt',
+    'updateTodo.php',
+    'fonts',
+    'img',
+    'converted.md',
+    'convertme.txt',
+    'out.sql',
+);
+
 // Recursively look through directories and add files to an array while ignoring certain values.
 function getFiles(&$files, $ignore, $path) {
     $dir = scandir($path);
@@ -43,19 +58,6 @@ function buildTodoList($todo) {
     return $todoList;
 }
 
-// Scan for files
-$ignore = array(
-    '.',
-    '..',
-    'README.md',
-    '.git',
-    'paras.txt',
-    'updateTodo.php',
-    'fonts',
-    'img',
-    'convertme.txt',
-    'out.sql',
-);
 $files = array();
 getFiles($files, $ignore, '..');
 

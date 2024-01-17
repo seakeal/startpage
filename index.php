@@ -11,6 +11,9 @@ if (array_key_exists('page', $_GET)) {
         case 'archive':
             include 'pages/archive.php';
             break;
+        case 'additions':
+            include 'pages/additions.php';
+            break;
         default:
             include 'pages/404.php';
             break;

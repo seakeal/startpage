@@ -84,6 +84,25 @@ body {
     animation-fill-mode: forwards;
 }
 
+/* ## Forms to Add Items */
+
+.addItemForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.addItemRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.addItemSubmitBtn {
+    padding-top: 5px;
+}
+
+
 /* ## Meme Archive ## */
 
 .memeNav {
@@ -122,6 +141,9 @@ body {
 }
 
 /* ## RSS ## */
+
+/* // TODO: Make RSS box size dynamically like other UI elements
+*/
 
 #rssFeed {
     display: flex;

@@ -2,7 +2,7 @@
 
 // Glocal Constants
 $DATEFORMAT = 'Y m d h i s';
-$ICON_DIR = 'img/rss/';
+$ICON_DIR = 'img/rss_icons/'; // Needs trailing slash
 
 // ##############################################
 // ## Utility functions

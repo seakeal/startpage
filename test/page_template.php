@@ -2,17 +2,16 @@
 
 include 'boilerplate/head.php';
 $head = new Head(
-    'Home',
-    'A startpage designed to fit my aesthetic and be friendly for evening use.'
+    'Template',
+    'This is a template page for reference.'
 );
 
 // path-to-mod => class-name
 $modules = array(
-    'mod/clock.php' => 'Clock',
-    'mod/bookmarks.php' => 'Bookmarks',
-    'mod/rss.php' =>  'RSS',
+    //'mod/modname.php' => 'ModName',
 );
 
+// Add required scripts for each mod
 foreach($modules as $m => $class) {
     include_once($m);
     $mod = new $class;
@@ -27,9 +26,7 @@ foreach($modules as $m => $class) {
     <body>
         <div id="mainContainer" class="mainContainer">
             <?php
-            $clock = new Clock; $clock->buildHtml();
-            $bookmarks = new Bookmarks; $bookmarks->buildHtml();
-            $rss = new RSS; $rss->buildHtml();
+            // $mod = new ModName; $mod->buildHtml();
             ?>
         </div>
     </body>

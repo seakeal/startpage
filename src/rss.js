@@ -23,7 +23,7 @@ function buildRSSBox(jsonRSS) {
     // Date formatting
     let dateArr = jsonRSS.date.split(' ');
     // let date = `${MONTHS[parseInt(dateArr[1])]} ${dateArr[2]} ${dateArr[0]} ${dateArr[3]}:${dateArr[4]}`;
-    let date = `${MONTHS[parseInt(dateArr[1])]} ${dateArr[2]} ${dateArr[0]}`;
+    let date = `${MONTHS[parseInt(dateArr[1])-1]} ${dateArr[2]} ${dateArr[0]}`;
     
     let rssBox = `
         <div id="${source}${countRSS}" class="rssBox">
@@ -42,12 +42,11 @@ function buildRSSBox(jsonRSS) {
 
 async function getRSS() {
     console.log('Getting RSS feed...');
-    // contentBoxOn(); TODO: Add JS for displaying the content box
     document.getElementById('rssFeed').innerHTML='<p>Loading RSS feed...</p>';
     fetch('api/rss.php')
     .then((response) => response.json())
     .then((feed) => {
-        console.log(feed); // TODO: Remove
+        console.log(feed); // TODO: Comment out console log
         let htmlString = '';
         feed.forEach(e => {
             countRSS++;

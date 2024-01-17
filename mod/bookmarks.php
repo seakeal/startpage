@@ -1,12 +1,15 @@
 <?php
 
+// TODO: Add buttons that lead to other pages in site
+// TODO: Add button that updates the TODO list (hide in production)
+
 class Bookmarks {
     // Properties
     public $scripts = array(
         //'src/rss.js',
     );
 
-    private $iconPath = 'img/icons';
+    private $iconPath = 'img/bookmark_icons'; // No trailing slash
     private $bookmarks = array(
         'GitHub'    => array(
             'Link'  => 'https://github.com/seakeal',
@@ -51,6 +54,10 @@ class Bookmarks {
         'Maps'      => array(
             'Link'  => 'https://www.google.com/maps',
             'Icon'  => "Maps.svg",
+        ),
+        'Photos'      => array(
+            'Link'  => 'https://photos.google.com/u/1/',
+            'Icon'  => "Photos.svg",
         ),
         // Template
         // 'Name'      => array(
