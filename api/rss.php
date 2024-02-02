@@ -197,6 +197,10 @@ function rss() {
             'source' => 'YouTube',
             'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UC8e0Sg8TmRRFJytjEGhmVTg',
         ),
+        'Salubrious-Snail' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCOYkwObFKjxko7oj56gVDag',
+        ),
         'Seer' => array(
             'source' => 'YouTube',
             'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCKbthQFolJxlUIYOa9bsKXg',
