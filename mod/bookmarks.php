@@ -55,9 +55,13 @@ class Bookmarks {
             'Link'  => 'https://www.google.com/maps',
             'Icon'  => "Maps.svg",
         ),
-        'Photos'      => array(
+        'Photos'    => array(
             'Link'  => 'https://photos.google.com/u/1/',
             'Icon'  => "Photos.svg",
+        ),
+        'Scryfall'  => array(
+            'Link'  => 'https://scryfall.com/',
+            'Icon'  => "Scryfall.svg",
         ),
         // Template
         // 'Name'      => array(
