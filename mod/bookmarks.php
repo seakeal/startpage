@@ -15,30 +15,19 @@ class Bookmarks {
             'Link'  => 'https://github.com/seakeal',
             'Icon'  => "GitHub.svg",
         ),
-        // 'League'    => array(
-        //     'Link'  => 'https://docs.google.com/spreadsheets/d/1LZ1Ei7oE2Wggxtu5299ftUHgQdg1J6st1ImZrHeyEXk/edit#gid=718441427',
-        //     'Icon'  => "Stats.svg",
-        // ),
-        'Mail'      => array(
-            'Link'  => 'https://mail.google.com/mail/u/0',
-            'Icon'  => "Mailbox.svg",
-        ),
-        'Spotify'   => array(
-            'Link'  => 'https://open.spotify.com/',
-            'Icon'  => "Spotify.svg",
-        ),
         'YouTube'   => array(
             'Link'  => 'https://www.youtube.com/feed/subscriptions',
             'Icon'  => "YouTube-Button.svg",
         ),
-        // 'RSS'       => array(
-        //     'Link'  => '#',
-        //     'Icon'  => "RSS-Flat.svg",
-        // ),
-        // 'Memes'     => array(
-        //     'Link'  => '#',
-        //     'Icon'  => "pepe2.png",
-        // ),
+        'ChatGPT'   => array(
+            'Link'  => 'https://chat.openai.com/',
+            'Icon'  => "OpenAI.svg",
+        ),
+        
+        'Mail'      => array(
+            'Link'  => 'https://mail.google.com/mail/u/0',
+            'Icon'  => "Mailbox.svg",
+        ),
         'GroupMe'   => array(
             'Link'  => 'https://groupme.com/en-US/',
             'Icon'  => "GroupMe.svg",
@@ -46,10 +35,6 @@ class Bookmarks {
         'Slack'     => array(
             'Link'  => 'https://slack.com/',
             'Icon'  => "Slack.svg",
-        ),
-        'ChatGPT'   => array(
-            'Link'  => 'https://chat.openai.com/',
-            'Icon'  => "OpenAI.svg",
         ),
         'Maps'      => array(
             'Link'  => 'https://www.google.com/maps',
@@ -59,10 +44,38 @@ class Bookmarks {
             'Link'  => 'https://photos.google.com/u/1/',
             'Icon'  => "Photos.svg",
         ),
+        'Drive'     => array(
+            'Link'  => 'https://drive.google.com/drive/u/0/my-drive',
+            'Icon'  => "Drive.svg",
+        ),
         'Scryfall'  => array(
             'Link'  => 'https://scryfall.com/',
             'Icon'  => "Scryfall.svg",
         ),
+        'Moxfield'  => array(
+            'Link'  => 'https://www.moxfield.com/',
+            'Icon'  => "Moxfield.svg",
+        ),
+        'EDHREC'     => array(
+            'Link'  => 'https://edhrec.com/',
+            'Icon'  => "EDHREC.svg",
+        ),
+        // 'League'    => array(
+        //     'Link'  => 'https://docs.google.com/spreadsheets/d/1LZ1Ei7oE2Wggxtu5299ftUHgQdg1J6st1ImZrHeyEXk/edit#gid=718441427',
+        //     'Icon'  => "Stats.svg",
+        // ),
+        // 'Spotify'   => array(
+        //     'Link'  => 'https://open.spotify.com/',
+        //     'Icon'  => "Spotify.svg",
+        // ),
+        // 'RSS'       => array(
+        //     'Link'  => '#',
+        //     'Icon'  => "RSS-Flat.svg",
+        // ),
+        // 'Memes'     => array(
+        //     'Link'  => '#',
+        //     'Icon'  => "pepe2.png",
+        // ),
         // Template
         // 'Name'      => array(
         //     'Link'  => '',

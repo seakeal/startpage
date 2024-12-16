@@ -6,9 +6,9 @@ This is what my page looks like.
 TODO LIST:
 - api/rss.php
 	- Pull RSS sources from the database
+	- Add Yuqi's BeansTalk RSS feed
 	- Add TF2 website RSS feed
 	- Add Terry Cavanagh's blog RSS feed
-	- Add Worthikids YouTube RSS feed
 	- Mess with this → create an issue or something
 	- Run each feed in parallel and sort the completed array
 - mod/bookmarks.php

@@ -205,10 +205,10 @@ function rss() {
             'source' => 'YouTube',
             'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCKbthQFolJxlUIYOa9bsKXg',
         ),
-        'Sir-Swag' => array(
-            'source' => 'YouTube',
-            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCJy232tY_LUd1NuBgsSNUEA',
-        ),
+        // 'Sir-Swag' => array(
+        //     'source' => 'YouTube',
+        //     'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCJy232tY_LUd1NuBgsSNUEA',
+        // ),
         'Sir-Swag-Academy' => array(
             'source' => 'YouTube',
             'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCN6lBBO-sn2mRyjWRCz0Qtg',
@@ -249,10 +249,14 @@ function rss() {
             'source' => 'YouTube',
             'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCd0zIZlbgvEifm_hd3FwlBQ',
         ),
+        'Worthikids' => array(
+            'source' => 'YouTube',
+            'url'    => 'https://www.youtube.com/feeds/videos.xml?channel_id=UCxXu9tCU63mF1ntk89XPkzA',
+        ),
 
+        // TODO: Add Yuqi's BeansTalk RSS feed
         // TODO: Add TF2 website RSS feed
         // TODO: Add Terry Cavanagh's blog RSS feed
-        // TODO: Add Worthikids YouTube RSS feed
 
         // Template
         // 'name' => array(
