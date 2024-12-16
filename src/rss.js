@@ -59,4 +59,5 @@ async function getRSS() {
 function showDesc() {
     alert('Where is the description modal?');
     // TODO: Make modal for description
+    // TODO: Loading animation and page change on error
 }

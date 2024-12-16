@@ -28,5 +28,6 @@ TODO LIST:
 - src/rss.js
 	- Comment out console log
 	- Make modal for description
+	- Loading animation and page change on error
 - styles/simple.css
 	- Make RSS box size dynamically like other UI elements
